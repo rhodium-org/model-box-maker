@@ -1,6 +1,6 @@
 uid: TEST-0010
 type: test
-status: ratified
+status: implemented
 title: The footprint follows the model
 text: A bar 80 by 10 by 10 mm saved turned 30 degrees about Z is boxed with its long
   side parallel to a box side, and the outer footprint is 80 and 10 plus the walls
