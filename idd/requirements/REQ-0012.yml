@@ -1,6 +1,6 @@
 uid: REQ-0012
 type: requirement
-status: suspect
+status: ratified
 title: Seen from above, the box is cut back to a wall of bounded thickness
 text: Seen from above, the closed box is the smallest rounded rectangle around the
   cavity, cut back wherever the wall would be thicker than --wall-max, so that no
@@ -24,13 +24,18 @@ attrs:
   priority: must
   origin: ai
   ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:e5339d3120aba403fd5032b8eb4d9d54fb39f376b748fba467907fbb684134b4
+  ratified_fingerprint: sha256:8d599a56b6cc4b11ba1bb7a7990920bc10233a3c78232b1947e9ff4a9848b8d9
   ratified_content:
     type: requirement
-    text: The closed box is a cuboid. Its vertical edges are rounded to the corner
-      radius, which may be zero. The top of the lid and the underside of the base
-      are flat.
+    text: Seen from above, the closed box is the smallest rounded rectangle around
+      the cavity, cut back wherever the wall would be thicker than --wall-max, so
+      that no point of the outside is further than --wall-max from the cavity and
+      none is nearer than the wall thickness. Where the rectangle remains, its vertical
+      edges keep the corner radius. A cut-back edge follows the cavity outline at
+      a constant distance and is rounded by construction. The lid has the same outline
+      as the base. The top of the lid and the underside of the base are flat. --wall-max
+      defaults to 5 mm; a value larger than the box keeps the full rectangle.
     normative: true
     derived: false
     attrs:
-      priority: should
+      priority: must

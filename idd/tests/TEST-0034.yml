@@ -1,6 +1,6 @@
 uid: TEST-0034
 type: test
-status: proposed
+status: ratified
 title: A tippy outline keeps the rectangle and says so
 text: An L bracket kept standing whose cut-back footprint would tip below 20 degrees
   is boxed with the full rectangle and the report says why; a flat plate reports
@@ -11,3 +11,13 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:ab0243bf4ee7ca8601fb6225fdacd536241b358485f59b574fe14f5982c7d3d5
+  ratified_content:
+    type: test
+    text: An L bracket kept standing whose cut-back footprint would tip below 20
+      degrees is boxed with the full rectangle and the report says why; a flat plate
+      reports a tipping angle over 45 degrees with the cut-back outline.
+    normative: false
+    derived: false
+    attrs: {}

@@ -1,6 +1,6 @@
 uid: REQ-0003
 type: requirement
-status: suspect
+status: ratified
 title: Every dimension that shapes the box is an option with a stated default
 text: Each of these is a command-line option in millimetres with its default shown
   in --help. Clearance around the model 1.0. Wall thickness 2.4. Greatest wall thickness
@@ -23,17 +23,18 @@ attrs:
   priority: must
   origin: ai
   ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:f07be6c6ea7c06b9b2f1964bfe4e232bf14d4cbaefb581f5c43f5310e9ebfaf8
+  ratified_fingerprint: sha256:0a5a5f620b0fe22fee83f3ad9b6acc7bb4e3d5fcb50c621c6ca4e559c190d268
   ratified_content:
     type: requirement
     text: Each of these is a command-line option in millimetres with its default
-      shown in --help. Clearance around the model 1.0. Wall thickness 2.4. Floor
-      thickness under the lowest point of the cradle 3.0. Top space between the highest
-      point of the model and the lid 2.0. Lip height 6.0. Lid plate thickness 2.0.
-      Lid skirt thickness 1.6. Fit gap between skirt and lip 0.2. Radius of the vertical
-      outer edges 3.0. Grid pitch 0.25. A zero or negative value, or a wall or skirt
-      under two nozzle lines (0.8 mm), is refused with exit code 2 before any geometry
-      is computed.
+      shown in --help. Clearance around the model 1.0. Wall thickness 2.4. Greatest
+      wall thickness below the lip 5.0. Floor thickness under the lowest point of
+      the cradle 3.0. Top space between the highest point of the model and the lid
+      2.0. Lip height 6.0. Lid plate thickness 2.0. Lid skirt thickness 1.6. Fit
+      gap between skirt and lip 0.2. Radius of the vertical outer edges 3.0. Grid
+      pitch 0.25. A zero or negative value, a wall or skirt under two nozzle lines
+      (0.8 mm), or a greatest wall thickness smaller than the wall, the skirt and
+      the fit gap together, is refused with exit code 2 before any geometry is computed.
     normative: true
     derived: false
     attrs:

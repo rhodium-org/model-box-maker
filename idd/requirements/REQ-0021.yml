@@ -1,6 +1,6 @@
 uid: REQ-0021
 type: requirement
-status: proposed
+status: ratified
 title: The cut-back box still stands
 text: The base stands on its flat underside. The tool takes the footprint of the
   closed box, the convex hull of that footprint, and the distance from the footprint's
@@ -23,3 +23,19 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:e3b084d0842eda1ee6d3a29a933a759ae4bfeedb3c31f4f25bad56215c486fe8
+  ratified_content:
+    type: requirement
+    text: The base stands on its flat underside. The tool takes the footprint of
+      the closed box, the convex hull of that footprint, and the distance from the
+      footprint's centroid to the nearest edge of the hull; with the mass taken at
+      half the box height it reports the angle the box can be tilted before it tips.
+      When the cut-back footprint would tip below 20 degrees and the full rectangle
+      would not, the tool keeps the rectangle and the report says why. When neither
+      reaches 20 degrees the tool warns on stderr and carries on. The report always
+      records the tipping angle and which outline was used.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

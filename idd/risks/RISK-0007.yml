@@ -1,6 +1,6 @@
 uid: RISK-0007
 type: risk
-status: proposed
+status: ratified
 title: A cut-back box tips over
 text: Once the outside follows the cavity, a model with a narrow or lopsided outline
   gives a footprint whose support polygon is smaller than the rectangle's, and the
@@ -11,3 +11,13 @@ rationale: The cuboid never had this problem because its footprint was the whole
 normative: true
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:f78bb1338468c89a1056b92f33b57a2500243ef1dcac0873513aa82c71a63270
+  ratified_content:
+    type: risk
+    text: Once the outside follows the cavity, a model with a narrow or lopsided
+      outline gives a footprint whose support polygon is smaller than the rectangle's,
+      and the box can be knocked over where the cuboid would have stood.
+    normative: true
+    derived: false
+    attrs: {}

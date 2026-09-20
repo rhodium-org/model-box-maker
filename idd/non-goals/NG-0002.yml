@@ -13,12 +13,12 @@ normative: false
 attrs:
   origin: ai
   ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:e296cc209acffc2f97c55d3b3bf01ad8f01f97aa1e2e213a0c393ecf3d06af66
+  ratified_fingerprint: sha256:9464b4da1c818d7a17408054249d2fa55b59a670a93f2fd969846302cb4b25ab
   ratified_content:
     type: non_goal
     text: One model per box. The tool does not nest several models, does not shape
-      the outside of the box to the model, does not generate foam or card inserts,
-      does not slice, and does not look up postage rates or size bands.
+      the top or the underside of the box to the model, does not generate foam or
+      card inserts, does not slice, and does not look up postage rates or size bands.
     normative: false
     derived: false
     attrs: {}

@@ -1,6 +1,6 @@
 uid: TEST-0020
 type: test
-status: suspect
+status: ratified
 title: The outside stays between the wall and the greatest wall from the cavity
 text: Every point of the base's outer outline lies at least the wall thickness and
   at most --wall-max from the cavity outline. Where the outline coincides with the
@@ -13,12 +13,13 @@ links:
 attrs:
   origin: ai
   ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:aaede2102529faee00238502da66df2bd58dd3d07352b0a92fb995db32a4df83
+  ratified_fingerprint: sha256:37bf891891d5d572229cfeb18897f24d8f6e93ca36604972ed98537db7ac812b
   ratified_content:
     type: test
-    text: The base's outer outline is a rectangle with corners rounded to the corner
-      radius, sharp when the radius is zero, and the base underside and the lid top
-      are each a single plane.
+    text: Every point of the base's outer outline lies at least the wall thickness
+      and at most --wall-max from the cavity outline. Where the outline coincides
+      with the rectangle, its corners are rounded to the corner radius, sharp when
+      the radius is zero. The base underside and the lid top are each a single plane.
     normative: false
     derived: false
     attrs: {}
