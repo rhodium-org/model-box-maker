@@ -1,6 +1,6 @@
 uid: REQ-0011
 type: requirement
-status: ratified
+status: implemented
 title: No wall is thinner than the wall thickness
 text: The inner face of the wall is the cavity outline. The outer face is the smallest
   rounded rectangle that keeps every point of the outline at least the wall thickness

@@ -1,6 +1,6 @@
 uid: TEST-0005
 type: test
-status: ratified
+status: implemented
 title: --help names every dimension and its default
 text: The help text contains each dimension option listed in REQ-0003 with its default
   value in millimetres.

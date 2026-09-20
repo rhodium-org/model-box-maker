@@ -1,6 +1,6 @@
 uid: TEST-0023
 type: test
-status: ratified
+status: implemented
 title: The seated lid clears the model
 text: The shortest distance between the seated lid and the model in its rest pose
   is at least the top space less 0.05 mm, and every lid vertex below the rim plane

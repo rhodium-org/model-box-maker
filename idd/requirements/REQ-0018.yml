@@ -1,6 +1,6 @@
 uid: REQ-0018
 type: requirement
-status: ratified
+status: implemented
 title: A preview shows the model sitting in its box
 text: With --preview the tool also writes <stem>-preview.3mf holding three named
   objects, the base, the lid lifted clear above it, and the model in its rest pose,

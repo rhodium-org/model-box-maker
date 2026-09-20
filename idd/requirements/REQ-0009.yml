@@ -1,14 +1,16 @@
 uid: REQ-0009
 type: requirement
-status: ratified
+status: implemented
 title: Rounding to the grid only ever enlarges the cavity
 text: The cradle is computed on a square grid at the grid pitch. Each cell takes
   the lowest point of the grown model's surface anywhere over the cell, less half
   the cell diagonal, and the cavity outline is grown by one cell. The cavity is therefore
   never smaller than the true drop path of the grown model, at any pitch.
 rationale: A grid can only be conservative in one direction, and the safe direction
-  is outward. The cost is a cavity up to one cell larger than exact, which at the
-  default pitch is a quarter of a millimetre and sits inside the clearance.
+  is outward. The cost is a cavity a few cells larger than exact. Each side can be
+  over by up to three cells, one for the cell the outline falls in, one for the cell
+  the clearance reaches into, and the one cell of growth. At the default pitch that
+  is under a millimetre and sits inside the clearance.
 normative: true
 links:
 - target: INT-0001

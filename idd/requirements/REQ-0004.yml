@@ -1,6 +1,6 @@
 uid: REQ-0004
 type: requirement
-status: ratified
+status: implemented
 title: The tool chooses the orientation that gives the smallest, snuggest box
 text: With --orientation auto, the default, the tool evaluates candidate poses of
   the model and keeps the best. The candidates are the model as saved, every face

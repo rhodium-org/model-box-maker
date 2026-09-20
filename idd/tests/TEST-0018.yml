@@ -1,6 +1,6 @@
 uid: TEST-0018
 type: test
-status: ratified
+status: implemented
 title: The floor is exactly the floor thickness at its thinnest
 text: The lowest cradle point sits the floor thickness above the base underside within
   0.01 mm, and vertical rays through 200 random footprint points meet solid material

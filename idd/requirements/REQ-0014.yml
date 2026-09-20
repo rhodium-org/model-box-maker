@@ -1,6 +1,6 @@
 uid: REQ-0014
 type: requirement
-status: ratified
+status: implemented
 title: The seated lid never reaches the model
 text: The rim stands at least the top space above the highest point of the model
   in its rest pose. Below the rim plane the lid has only its skirt, and the skirt

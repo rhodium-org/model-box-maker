@@ -1,6 +1,6 @@
 uid: TEST-0015
 type: test
-status: ratified
+status: implemented
 title: The model lifts straight out
 text: The model in its rest pose, lifted by 0.5 mm, 2 mm, 10 mm and to above the
   rim, never intersects the base body.

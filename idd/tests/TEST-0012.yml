@@ -1,6 +1,6 @@
 uid: TEST-0012
 type: test
-status: ratified
+status: implemented
 title: The report is complete and matches the geometry
 text: The report parses as JSON with every field named in REQ-0006. Applying its
   rotation and translation to the input places every vertex inside the cavity outline

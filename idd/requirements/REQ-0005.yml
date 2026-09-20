@@ -1,6 +1,6 @@
 uid: REQ-0005
 type: requirement
-status: ratified
+status: implemented
 title: The orientation can be fixed by hand
 text: --orientation keep uses the model as saved, with the file's Z axis up. --orientation
   RX,RY,RZ rotates the model by those angles in degrees about the X, Y and Z axes

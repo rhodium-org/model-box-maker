@@ -1,6 +1,6 @@
 uid: REQ-0008
 type: requirement
-status: ratified
+status: implemented
 title: The cavity is the model's drop path, grown by the clearance
 text: The model in its chosen pose is grown outward by the clearance in every direction.
   The cavity is every point that grown model passes through when it is lifted straight

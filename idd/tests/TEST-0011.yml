@@ -1,6 +1,6 @@
 uid: TEST-0011
 type: test
-status: ratified
+status: implemented
 title: A fixed orientation is used exactly
 text: --orientation keep reports the identity rotation and a cradle matching the
   file's underside. --orientation 90,0,0 reports a rotation equal to that matrix

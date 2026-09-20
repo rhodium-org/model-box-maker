@@ -1,6 +1,6 @@
 uid: NFR-0002
 type: nfr
-status: ratified
+status: implemented
 title: Installs with pipx and needs no compiler
 text: The tool is a Python package installable with pipx from the repository. Its
   dependencies ship binary wheels for Linux, macOS and Windows on Python 3.10 and

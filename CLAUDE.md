@@ -10,12 +10,18 @@ graph in `idd/` is the specification the code is built and tested against.
   before changing anything, change the graph only through the `tl` CLI, and
   keep `tl -C idd check` at 0 errors.
 - Every commit cites the item it serves, written as `model-box-maker <UID>`.
-- Generate or amend the requirement before implementing it, never after.
-- Every item is `origin: ai` and sits at `proposed` until a human ratifies it.
-  `check --strict` reports each unratified item; that red is the expected
-  state for an unread item, not a defect to silence. Never ratify on a
-  human's behalf.
+- Amend or add the requirement before changing the behaviour, never after.
+  Amending a ratified item makes it `ratified-stale`; say so in the hand-over
+  and never ratify on a human's behalf.
 - Item text is plain, short technical sentences. Avoid `: ` inside a YAML
   plain scalar; the CLI quotes for you when you go through `tl new`/`tl amend`.
-- When code exists: outputs are deterministic and derive only from the input
-  model and the options; never hand-edit a generated STL, 3MF or report.
+- Code: `python3 -m venv .venv && .venv/bin/pip install -e .[test]`, then
+  `.venv/bin/python -m pytest -q` (about four minutes). Test functions are
+  named `test_<NNNN>_...` after their TEST item; module docstrings name the
+  REQ/NFR items they implement. Keep both true when you change either.
+- Outputs are deterministic and derive only from the input model and the
+  options; never hand-edit a generated STL, 3MF or report, and never put a
+  timestamp or an absolute path into one.
+- Geometry is built with manifold3d from closed solids; the cradle is a
+  heightmap that only rounds outward (REQ-0009). If a boolean fails the tool
+  raises rather than writing a body.

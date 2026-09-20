@@ -1,6 +1,6 @@
 uid: TEST-0001
 type: test
-status: ratified
+status: implemented
 title: Every supported format gives the same box
 text: The same model saved as binary STL, ASCII STL, OBJ, 3MF and PLY produces bases
   whose volumes agree within 0.1 percent and whose reports show the same pose.

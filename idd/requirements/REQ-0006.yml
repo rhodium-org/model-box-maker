@@ -1,6 +1,6 @@
 uid: REQ-0006
 type: requirement
-status: ratified
+status: implemented
 title: A report explains the box
 text: Beside the geometry the tool writes <stem>-report.json. It records the input
   file and scale, the orientation mode, the rotation applied to the model as a 3

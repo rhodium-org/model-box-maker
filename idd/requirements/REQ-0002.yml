@@ -1,6 +1,6 @@
 uid: REQ-0002
 type: requirement
-status: ratified
+status: implemented
 title: Model units and scale
 text: The model is read as millimetres. The option --scale multiplies every coordinate
   before anything else happens, so a file authored in inches is handled with --scale

@@ -1,6 +1,6 @@
 uid: NFR-0001
 type: nfr
-status: ratified
+status: implemented
 title: A typical model is boxed within a minute
 text: A model of up to 200 000 triangles and up to 150 mm across, at the default
   options, finishes within 60 seconds on the machine that runs the test suite.

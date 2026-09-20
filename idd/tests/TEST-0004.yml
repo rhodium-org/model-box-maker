@@ -1,6 +1,6 @@
 uid: TEST-0004
 type: test
-status: ratified
+status: implemented
 title: Suspicious sizes warn and continue
 text: A 2 mm cube and a 500 mm cube each produce a units warning on stderr and a
   box. A 60 mm cube produces no warning.

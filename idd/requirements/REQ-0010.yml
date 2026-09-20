@@ -1,6 +1,6 @@
 uid: REQ-0010
 type: requirement
-status: ratified
+status: implemented
 title: The floor under the model is solid and never thinner than the floor thickness
 text: The base is solid from its underside up to the cradle surface at every point
   of the footprint. The lowest point of the cradle sits exactly the floor thickness

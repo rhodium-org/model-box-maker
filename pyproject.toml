@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "model-box-maker"
+version = "0.1.0"
+description = "Turn a 3D model file into a printable two-part postal box shaped to that model."
+readme = "README.md"
+requires-python = ">=3.10"
+# Every dependency ships binary wheels for Linux, macOS and Windows (NFR-0002).
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "trimesh>=4.4",
+    "manifold3d>=3.0",
+    "rtree>=1.1",
+    "networkx>=3.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+model-box-maker = "model_box_maker.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["model_box_maker*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

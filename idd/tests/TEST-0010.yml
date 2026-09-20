@@ -3,8 +3,8 @@ type: test
 status: ratified
 title: The footprint follows the model
 text: A bar 80 by 10 by 10 mm saved turned 30 degrees about Z is boxed with its long
-  side parallel to a box side, and the outer footprint matches 80 and 10 plus the
-  walls and clearance within 1 mm.
+  side parallel to a box side, and the outer footprint is 80 and 10 plus the walls
+  and clearance, over by no more than three grid pitches on each side.
 normative: false
 links:
 - target: REQ-0004

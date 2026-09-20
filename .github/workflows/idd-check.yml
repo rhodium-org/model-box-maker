@@ -1,7 +1,8 @@
-# Gate: the requirements graph must be structurally sound on every push.
-# Non-strict on purpose — every item is AI-authored and waits at `proposed`
-# for a human to ratify, which `--strict` would report as red. Structural
-# faults (ungrounded items, bad links, illegal status moves) still fail here.
+# Gates: the requirements graph must be structurally sound and the test suite
+# green on every push. The graph check is non-strict on purpose: items amended
+# after ratification wait as `ratified-stale` for a human to re-sign, and
+# `--strict` would report that as red. Structural faults (ungrounded items,
+# bad links, illegal status moves) still fail here.
 name: idd-check
 
 on:
@@ -11,7 +12,7 @@ on:
     branches: [main]
 
 jobs:
-  check:
+  graph:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -22,3 +23,16 @@ jobs:
         run: python -m pip install --upgrade "throughline>=3.11.3"
       - run: tl --version
       - run: tl -C idd check
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install the tool and the test runner (wheels only, NFR-0002)
+        run: python -m pip install --only-binary ":all:" -e ".[test]"
+      - run: model-box-maker --version
+      # TEST-0031 measures the NFR-0001 bound on this machine; a shared runner is slower than a desktop.
+      - run: python -m pytest -q --durations=8

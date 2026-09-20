@@ -1,6 +1,6 @@
 uid: REQ-0015
 type: requirement
-status: ratified
+status: implemented
 title: Walls can be opened into a lattice
 text: --walls takes solid, hex or diamond, and defaults to solid. With a pattern,
   each of the four wall panels is cut through with that lattice. No hole is wider

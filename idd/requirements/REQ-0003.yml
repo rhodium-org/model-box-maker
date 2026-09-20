@@ -1,6 +1,6 @@
 uid: REQ-0003
 type: requirement
-status: ratified
+status: implemented
 title: Every dimension that shapes the box is an option with a stated default
 text: Each of these is a command-line option in millimetres with its default shown
   in --help. Clearance around the model 1.0. Wall thickness 2.4. Floor thickness
