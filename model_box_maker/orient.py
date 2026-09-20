@@ -18,7 +18,7 @@ from scipy.spatial import ConvexHull, QhullError
 from scipy.spatial.transform import Rotation
 
 from . import raster
-from .geometry import fit_lip_rect
+from .geometry import Exterior, build_exterior, fit_lip_rect
 from .spec import BoxSpec
 
 HULL_FACE_CAP = 30
@@ -54,6 +54,7 @@ class Evaluation:
     fits: bool = True
     stage: str = "final"
     index: int = 0  # position in the candidate list; the saved pose is 0
+    exterior: Exterior = None  # plan profiles in pose coordinates (REQ-0012, REQ-0021)
 
     @property
     def height(self) -> float:
@@ -182,9 +183,11 @@ def evaluate(mesh: tuple[np.ndarray, np.ndarray], rotation: np.ndarray, spec: Bo
     cavity = raster.cavity_for(posed, pitch, spec.clearance, exact)
     rim_z = cavity.rim_z(spec.top_space)
     lip_rect = fit_lip_rect(cavity, spec.wall, spec.lip_radius)
-    width = (lip_rect[2] - lip_rect[0]) + 2 * spec.body_offset
-    depth = (lip_rect[3] - lip_rect[1]) + 2 * spec.body_offset
     height = spec.floor + (rim_z - cavity.floor_min) + spec.lid_plate
+    exterior = build_exterior(cavity, lip_rect, spec, height)
+    bx0, by0, bx1, by1 = exterior.body.bounds()
+    width = bx1 - bx0
+    depth = by1 - by0
     return Evaluation(
         label=label,
         rotation=rotation,
@@ -192,9 +195,10 @@ def evaluate(mesh: tuple[np.ndarray, np.ndarray], rotation: np.ndarray, spec: Bo
         lip_rect=lip_rect,
         rim_z=rim_z,
         size=(float(width), float(depth), float(height)),
-        outer_volume=float(width * depth * height),
+        outer_volume=float(exterior.footprint_area * height),
         cavity_volume=cavity.cavity_volume(rim_z),
         stage=stage,
+        exterior=exterior,
     )
 
 

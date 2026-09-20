@@ -108,6 +108,24 @@ def _one_line(exc: BaseException) -> str:
 # ----------------------------------------------------------------- canonical form
 
 
+def clean_for_export(vertices: np.ndarray, faces: np.ndarray, decimals: int | None) -> tuple[np.ndarray, np.ndarray]:
+    """Snap coordinates to the file's precision, merge what then coincides, drop collapsed faces.
+
+    Boolean operations leave vertices a few nanometres apart; a float32 STL or a
+    six-decimal 3MF makes them equal, and a reader that merges equal vertices is
+    left with degenerate triangles and an unpaired edge. Removing a triangle
+    whose corners have merged keeps the surface closed: its two live edges ran
+    in opposite directions and now pair with each other's neighbours.
+    """
+    v = np.asarray(vertices, dtype=np.float64)
+    f = np.asarray(faces, dtype=np.int64)
+    snapped = v.astype(np.float32).astype(np.float64) if decimals is None else np.round(v, decimals)
+    uniq, inverse = np.unique(snapped, axis=0, return_inverse=True)
+    f2 = inverse.reshape(-1)[f]
+    keep = (f2[:, 0] != f2[:, 1]) & (f2[:, 1] != f2[:, 2]) & (f2[:, 0] != f2[:, 2])
+    return uniq, f2[keep]
+
+
 def canonical(vertices: np.ndarray, faces: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     """Order vertices and faces so equal geometry gives equal bytes (REQ-0019).
 
@@ -137,7 +155,7 @@ def canonical(vertices: np.ndarray, faces: np.ndarray) -> tuple[np.ndarray, np.n
 
 def write_stl(path: str, vertices: np.ndarray, faces: np.ndarray) -> None:
     """Binary STL with a fixed header; no timestamp, no library banner."""
-    v, f = canonical(vertices, faces)
+    v, f = canonical(*clean_for_export(vertices, faces, None))
     tri = v[f]  # (m, 3, 3)
     normals = np.cross(tri[:, 1] - tri[:, 0], tri[:, 2] - tri[:, 0])
     length = np.linalg.norm(normals, axis=1)
@@ -167,7 +185,7 @@ def write_3mf(path: str, objects: list[tuple[str, np.ndarray, np.ndarray]]) -> N
         " <resources>\n",
     ]
     for index, (name, vertices, faces) in enumerate(objects, start=1):
-        v, f = canonical(vertices, faces)
+        v, f = canonical(*clean_for_export(vertices, faces, 6))
         parts.append(f'  <object id="{index}" name="{_xml_escape(name)}" type="model">\n   <mesh>\n    <vertices>\n')
         parts.extend(f'     <vertex x="{x:.6f}" y="{y:.6f}" z="{z:.6f}"/>\n' for x, y, z in v)
         parts.append("    </vertices>\n    <triangles>\n")

@@ -17,18 +17,21 @@ import trimesh
 import xml.etree.ElementTree as etree
 
 from model_box_maker import printcheck
-from model_box_maker.geometry import rounded_rect_sdf
+from model_box_maker.geometry import (LATTICE_BESIDE, LATTICE_BLIND, LATTICE_OUTSIDE, boundary_distance,
+                                      cradle_beside, hole_polygon, section_polygons, signed_distance)
 from model_box_maker.mesh_io import load_body
-from tests.conftest import ROOT, intersects, manifold_of, translated, trimesh_of
+from scipy.spatial import cKDTree
+from tests.conftest import ROOT, densify, intersects, manifold_of, translated, trimesh_of
 
 
 def _seated(result):
     return result.seated_lid()
 
 
-def test_0021_the_lid_seats_on_the_rim_and_stops_there(run_box):
+@pytest.mark.parametrize("name,kwargs", [("cube", {}), ("l_bracket_standing", {"orientation": "keep"})])
+def test_0021_the_lid_seats_on_the_rim_and_stops_there(run_box, name, kwargs):
     """TEST-0021: plate underside on the rim plane, skirt the fit gap from the lip, flush outside, and blocked below."""
-    result, _ = run_box("cube", pitch=0.5)
+    result, _ = run_box(name, pitch=0.5, **kwargs)
     spec, layout = result.spec, result.layout
     lid_v, lid_f = _seated(result)
     lid = trimesh.Trimesh(lid_v, lid_f, process=False)
@@ -41,13 +44,13 @@ def test_0021_the_lid_seats_on_the_rim_and_stops_there(run_box):
     v = lid.vertices
     skirt_bottom = layout.rim_z - spec.skirt_height
     skirt_band = v[np.abs(v[:, 2] - skirt_bottom) < 1e-6]
-    d_lip = -rounded_rect_sdf(skirt_band[:, 0], skirt_band[:, 1], *layout.lip, layout.r_lip)
-    d_body = -rounded_rect_sdf(skirt_band[:, 0], skirt_band[:, 1], *layout.body, layout.r_body)
-    inner = skirt_band[np.abs(d_lip + spec.fit) < 0.05]
-    outer = skirt_band[np.abs(d_body) < 0.05]
+    d_lip = signed_distance(skirt_band, layout.lip_section())
+    d_body = np.abs(signed_distance(skirt_band, layout.body_section()))
+    inner = skirt_band[np.abs(d_lip - spec.fit) < 0.05]
+    outer = skirt_band[d_body < 0.05]
     assert abs(skirt_bottom - (layout.shoulder_z + spec.fit)) < 1e-9
     assert len(inner) > 8 and len(outer) > 8
-    assert np.abs(rounded_rect_sdf(outer[:, 0], outer[:, 1], *layout.body, layout.r_body)).max() < 0.05
+    assert len(inner) + len(outer) >= len(skirt_band) - 2
     # lowering the seated lid by 0.5 mm makes it intersect the base
     base = manifold_of(result.base)
     assert intersects(base, manifold_of(translated((lid_v, lid_f), [0, 0, -0.5])))
@@ -75,39 +78,79 @@ def test_0023_the_seated_lid_clears_the_model(run_box):
     assert dist.min() >= spec.top_space - 0.05
     below = lid_v[lid_v[:, 2] < layout.rim_z - 1e-6]
     assert len(below)
-    outside = rounded_rect_sdf(below[:, 0], below[:, 1], *layout.lip, layout.r_lip)
-    assert outside.min() >= spec.fit - 1e-6
+    outside = signed_distance(below, layout.lip_section())
+    assert outside.min() >= spec.fit - 0.02
+
+
+def _cavity_cells(result):
+    cav = result.cavity()
+    g = cav.grid
+    mi, mj = np.nonzero(cav.mask)
+    t = result.layout.translation
+    xy = np.column_stack([g.x_edge(mi) + g.pitch / 2 + t[0], g.y_edge(mj) + g.pitch / 2 + t[1]])
+    return xy, cav.floor[mi, mj] + t[2], cKDTree(xy)
+
+
+def _removed_pieces(solid, patterned):
+    removed = manifold_of(solid.base) - manifold_of(patterned.base)
+    pieces = []
+    for piece in removed.decompose():
+        mesh = piece.to_mesh64()
+        pieces.append(np.asarray(mesh.vert_properties, dtype=np.float64)[:, :3])
+    return removed, pieces
 
 
 @pytest.mark.parametrize("pattern", ["hex", "diamond"])
 def test_0024_a_lattice_takes_material_only_from_the_panels(run_box, pattern):
-    """TEST-0024: patterned within solid; removed material only in the panel zones; holes within max-hole; printable."""
+    """TEST-0024: patterned within solid; removed material within wall-max plus the cut depth of the cavity,
+    above the cradle beside it plus the band, below the lip band; holes within max-hole; printable."""
     solid, _ = run_box("cube60", walls="solid", pitch=0.5)
     patterned, _ = run_box("cube60", walls=pattern, pitch=0.5)
     spec, layout = patterned.spec, patterned.layout
-    solid_m = manifold_of(solid.base)
-    patt_m = manifold_of(patterned.base)
-    assert (patt_m - solid_m).volume() < 1e-6, "patterned base sticks out of the solid base"
-    removed = solid_m - patt_m
-    assert removed.volume() > 100.0, "no material was removed"
-    mesh = trimesh_of((np.asarray(removed.to_mesh64().vert_properties)[:, :3], np.asarray(removed.to_mesh64().tri_verts)))
-    v = mesh.vertices
-    z_lo = layout.cradle_top_z + spec.band
-    z_hi = layout.shoulder_z - spec.band
-    assert v[:, 2].min() >= z_lo - 1e-6 and v[:, 2].max() <= z_hi + 1e-6
-    x0, y0, x1, y1 = layout.body
-    inset = layout.r_body + spec.band
-    depth = layout.wall_below_lip() + 0.5 + 1e-6
-    in_x_panel = ((v[:, 0] <= x0 + depth) | (v[:, 0] >= x1 - depth)) & (v[:, 1] >= y0 + inset - 1e-6) & (v[:, 1] <= y1 - inset + 1e-6)
-    in_y_panel = ((v[:, 1] <= y0 + depth) | (v[:, 1] >= y1 - depth)) & (v[:, 0] >= x0 + inset - 1e-6) & (v[:, 0] <= x1 - inset + 1e-6)
-    assert (in_x_panel | in_y_panel).all(), "removed material outside the panel zones"
-    # each hole: the removed solid decomposes into one piece per hole; check its width across the panel
-    for piece in removed.decompose():
-        pv = np.asarray(piece.to_mesh64().vert_properties)[:, :3]
-        along = np.ptp(pv[:, 1]) if (np.ptp(pv[:, 0]) <= depth + 1e-6) else np.ptp(pv[:, 0])
-        assert along <= spec.max_hole + 1e-6
-        assert np.ptp(pv[:, 2]) <= spec.max_hole + 1e-6
+    assert (manifold_of(patterned.base) - manifold_of(solid.base)).volume() < 1e-6, "patterned base sticks out"
+    removed, pieces = _removed_pieces(solid, patterned)
+    assert removed.volume() > 100.0 and len(pieces) >= 8
+    poly = hole_polygon(pattern, spec.max_hole)
+    hole_w, hole_h = float(np.ptp(poly[:, 0])), float(np.ptp(poly[:, 1]))
+    cells_xy, cells_z, tree = _cavity_cells(patterned)
+    holes = layout.lattice
+    assert len(holes) >= len(pieces)
+    reach = spec.wall_max + LATTICE_BLIND + LATTICE_OUTSIDE + 0.05
+    for pv in pieces:
+        assert boundary_distance(pv, layout.cavity_section).max() <= reach
+        assert pv[:, 2].max() <= layout.shoulder_z - spec.band + 1e-6
+        c = pv.mean(axis=0)
+        hole = min(holes, key=lambda h: np.hypot(*(h["point"] - c[:2])))
+        p, n = hole["point"], hole["normal"]
+        beside = cradle_beside(cells_xy, cells_z, tree, p, n, hole_w / 2 + LATTICE_BESIDE,
+                               spec.wall_max + LATTICE_BLIND + LATTICE_BESIDE)
+        z_low = (layout.floor_z if beside is None else beside) + spec.band
+        assert pv[:, 2].min() >= z_low - 1e-6
+        t = np.array([-n[1], n[0]])
+        assert np.ptp(pv[:, :2] @ t) <= spec.max_hole + 0.1
+        assert np.ptp(pv[:, 2]) <= spec.max_hole + 0.1
     assert printcheck.check_printable(*patterned.base) == []
+
+
+def test_0035_a_tall_cradle_on_one_side_does_not_stop_holes_elsewhere(run_box):
+    """TEST-0035: a post with an arm from its top: holes beside the post where the cradle is low, none beside
+    the arm where the cradle rises, each cut along the normal."""
+    solid, _ = run_box("flag", orientation="keep", pitch=0.5)
+    patterned, _ = run_box("flag", orientation="keep", pitch=0.5, walls="hex")
+    spec, layout = patterned.spec, patterned.layout
+    t = layout.translation
+    _, pieces = _removed_pieces(solid, patterned)
+    assert pieces, "no holes were cut"
+    centres = np.array([pv.mean(axis=0) for pv in pieces])
+    pole_far_x = 20.0 + t[0]
+    arm_start_x = 20.0 + t[0] + 10.0
+    assert (centres[:, 0] < pole_far_x).sum() >= 2, "no holes beside the post"
+    assert not (centres[:, 0] > arm_start_x).any(), "a hole beside the arm"
+    for pv, hole in zip(pieces, [min(layout.lattice, key=lambda h: np.hypot(*(h["point"] - pv.mean(axis=0)[:2]))) for pv in pieces]):
+        n = hole["normal"]
+        along_n = np.ptp(pv[:, :2] @ n)
+        assert spec.wall + spec.body_offset - 0.1 <= along_n <= spec.wall_max + LATTICE_BLIND + 0.1
+        assert np.ptp(pv[:, :2] @ np.array([-n[1], n[0]])) <= spec.max_hole + 0.1
 
 
 def test_0025_solid_is_the_default(run_box):

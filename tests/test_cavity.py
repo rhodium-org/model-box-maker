@@ -6,8 +6,8 @@ import numpy as np
 import pytest
 import trimesh
 
-from model_box_maker.geometry import rounded_rect_sdf
-from tests.conftest import intersects, manifold_of, translated, trimesh_of
+from model_box_maker.geometry import boundary_distance, rounded_rect_sdf, section_polygons
+from tests.conftest import densify, intersects, manifold_of, translated, trimesh_of
 
 
 def _surface_samples(result, count=2000, seed=0):
@@ -108,35 +108,79 @@ def test_0019_the_wall_is_never_thinner_than_the_wall_thickness(run_box, radius)
     g = cavity.grid
     xs = np.concatenate([g.x_edge(ii), g.x_edge(ii + 1), g.x_edge(ii), g.x_edge(ii + 1)]) + tx
     ys = np.concatenate([g.y_edge(jj), g.y_edge(jj), g.y_edge(jj + 1), g.y_edge(jj + 1)]) + ty
-    at_lip = -rounded_rect_sdf(xs, ys, *layout.lip, layout.r_lip)
-    below_lip = -rounded_rect_sdf(xs, ys, *layout.body, layout.r_body)
+    corners = np.column_stack([xs, ys])
+    at_lip = boundary_distance(corners, layout.lip_section())
+    below_lip = boundary_distance(corners, layout.body_section())
     assert at_lip.min() >= result.spec.wall - 0.01
-    assert below_lip.min() >= result.spec.wall - 0.01
+    assert below_lip.min() >= result.spec.wall + result.spec.body_offset - 0.01
 
 
-def test_0020_the_outside_is_a_rounded_cuboid(run_box):
-    """TEST-0020: rounded rectangle outline with the corner radius, sharp at zero; flat underside and lid top."""
-    for radius in (0.0, 3.0):
-        result, _ = run_box("cube", corner_radius=radius, pitch=0.5)
+def _underside_ring(base):
+    """Underside vertices that also belong to a side face: the outline as built."""
+    v = base.vertices
+    side = np.abs(base.face_normals[:, 2]) < 0.5
+    on_side = np.zeros(len(v), dtype=bool)
+    on_side[np.unique(base.faces[side])] = True
+    return v[(np.abs(v[:, 2]) < 1e-6) & on_side]
+
+
+def test_0020_the_outside_stays_between_the_wall_and_the_greatest_wall(run_box):
+    """TEST-0020: outline between wall and --wall-max from the cavity; rectangle corners keep the radius,
+    sharp at zero; flat underside and lid top."""
+    for name, kwargs in (("cube", {"pitch": 0.5}), ("cylinder_standing", {"pitch": 0.5, "orientation": "keep"})):
+        result, _ = run_box(name, **kwargs)
+        spec, layout = result.spec, result.layout
         base = trimesh_of(result.base)
         lid = trimesh_of(result.lid)
-        w, d, _ = result.layout.size
-        # the outline: every underside vertex that also belongs to a side face lies on the rounded
-        # rectangle (a flat face may keep interior vertices from the body-and-lip union)
-        v = base.vertices
-        side = np.abs(base.face_normals[:, 2]) < 0.5
-        on_side = np.zeros(len(v), dtype=bool)
-        on_side[np.unique(base.faces[side])] = True
-        ring = v[(np.abs(v[:, 2]) < 1e-6) & on_side]
+        ring = _underside_ring(base)
         assert len(ring) >= 4
+        # the built outline is the designed body profile, and that profile keeps inside the band
+        assert np.abs(boundary_distance(ring, layout.body_section())).max() < 0.02
+        along = densify(section_polygons(layout.body_section()))
+        dist = boundary_distance(along, layout.cavity_section)
+        assert dist.min() >= spec.wall + spec.body_offset - 0.05, name
+        assert dist.max() <= spec.wall_max + 0.05, name
+        assert abs(base.bounds[0][2]) < 1e-9 and abs(lid.bounds[0][2]) < 1e-9
+        top = lid.face_normals[:, 2] < -0.999
+        assert np.allclose(lid.vertices[np.unique(lid.faces[top])][:, 2], 0.0, atol=1e-6)
+    # where the rectangle remains (a wall limit larger than the box), the corners are as asked
+    for radius in (0.0, 3.0):
+        result, _ = run_box("cube", corner_radius=radius, pitch=0.5, wall_max=100.0)
+        assert result.layout.exterior.kind == "rectangle"
+        base = trimesh_of(result.base)
+        w, d, _ = result.layout.size
+        ring = _underside_ring(base)
         sdf = rounded_rect_sdf(ring[:, 0], ring[:, 1], 0.0, 0.0, w, d, radius)
         assert np.abs(sdf).max() < 0.02, radius
         if radius == 0:
-            corners = [(0, 0), (w, 0), (0, d), (w, d)]
-            for cx, cy in corners:
-                assert np.any(np.hypot(v[:, 0] - cx, v[:, 1] - cy) < 1e-6), "sharp corner missing"
-        assert abs(base.bounds[0][2]) < 1e-9 and abs(lid.bounds[0][2]) < 1e-9
-        underside = base.vertices[np.abs(base.vertices[:, 2]) < 1e-6]
-        assert len(underside) >= 4
-        top = lid.face_normals[:, 2] < -0.999
-        assert np.allclose(lid.vertices[np.unique(lid.faces[top])][:, 2], 0.0, atol=1e-6)
+            for cx, cy in [(0, 0), (w, 0), (0, d), (w, d)]:
+                assert np.any(np.hypot(ring[:, 0] - cx, ring[:, 1] - cy) < 1e-6), "sharp corner missing"
+
+
+def test_0033_a_round_model_is_cut_back_and_a_large_wall_max_restores_the_rectangle(run_box):
+    """TEST-0033: standing cylinder: footprint at least 15 percent smaller, walls within the band, one body;
+    --wall-max 100 gives the rectangle's footprint within 0.1 percent."""
+    result, _ = run_box("cylinder_standing", orientation="keep")
+    spec, layout = result.spec, result.layout
+    ext = layout.exterior
+    assert ext.kind == "cut back"
+    assert ext.footprint_area <= 0.85 * ext.rectangle_area, (ext.footprint_area, ext.rectangle_area)
+    along = densify(section_polygons(layout.body_section()))
+    dist = boundary_distance(along, layout.cavity_section)
+    assert dist.min() >= spec.wall - 1e-6 and dist.max() <= spec.wall_max + 0.05
+    assert len(manifold_of(result.base).decompose()) == 1
+    wide, _ = run_box("cylinder_standing", orientation="keep", wall_max=100.0)
+    assert wide.layout.exterior.kind == "rectangle"
+    assert abs(wide.layout.exterior.footprint_area - wide.layout.exterior.rectangle_area) <= 1e-3 * wide.layout.exterior.rectangle_area
+
+
+def test_0034_a_tippy_outline_keeps_the_rectangle_and_says_so(run_box):
+    """TEST-0034: a standing wedge keeps the rectangle with the reason; a flat plate is cut back at over 45 degrees."""
+    result, paths = run_box("wedge_standing", orientation="keep", pitch=0.5)
+    ext = result.layout.exterior
+    assert ext.tipping_cut_deg < 20.0 <= ext.tipping_rect_deg, (ext.tipping_cut_deg, ext.tipping_rect_deg)
+    assert ext.kind == "rectangle" and "tip" in ext.reason
+    assert result.report["exterior"]["outline"] == "rectangle" and "tip" in result.report["exterior"]["reason"]
+    plate, _ = run_box("plate_on_edge")
+    assert plate.layout.exterior.tipping_deg > 45.0
+    assert plate.layout.exterior.kind == "cut back"

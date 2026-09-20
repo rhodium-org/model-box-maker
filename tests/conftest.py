@@ -72,6 +72,21 @@ def build_fixture(name: str) -> trimesh.Trimesh:
         block = m3d.Manifold.cube([20.0, 20.0, 10.0], True)
         fin = m3d.Manifold.cube([0.6, 15.0, 8.0], True).translate([0.0, 0.0, -9.0])
         return _manifold_to_trimesh(block + fin)
+    if name == "cylinder_standing":
+        return trimesh.creation.cylinder(radius=20.0, height=30.0, sections=96)
+    if name == "l_bracket_standing":
+        leg_a = m3d.Manifold.cube([30.0, 8.0, 60.0])
+        leg_b = m3d.Manifold.cube([8.0, 30.0, 60.0])
+        return _manifold_to_trimesh(leg_a + leg_b)
+    if name == "wedge_standing":
+        section = np.array([[0.0, 0.0], [60.0, 0.0], [0.0, 60.0]])
+        return _manifold_to_trimesh(m3d.Manifold.extrude(m3d.CrossSection([section]), 130.0))
+    if name == "flag":
+        # a post reaching the floor with an arm reaching out from its top: the cradle is low
+        # beside the post and rises to 34 mm under the arm
+        pole = m3d.Manifold.cube([20.0, 8.0, 40.0])
+        arm = m3d.Manifold.cube([30.0, 8.0, 6.0]).translate([20.0, 0.0, 34.0])
+        return _manifold_to_trimesh(pole + arm)
     if name == "torus200k":
         return trimesh.creation.torus(major_radius=50.0, minor_radius=25.0,
                                       major_sections=400, minor_sections=250)
@@ -148,3 +163,14 @@ def intersects(a: m3d.Manifold, b: m3d.Manifold) -> bool:
 def translated(vf, offset):
     v, f = vf
     return np.asarray(v) + np.asarray(offset, dtype=float), f
+
+
+def densify(loops, step: float = 0.25) -> np.ndarray:
+    """Points every ``step`` mm along polygon loops."""
+    out = []
+    for poly in loops:
+        poly = np.asarray(poly, float)
+        for a, b in zip(poly, np.roll(poly, -1, axis=0)):
+            n = max(int(np.ceil(np.linalg.norm(b - a) / step)), 1)
+            out.append(a + (b - a) * (np.arange(n)[:, None] / n))
+    return np.vstack(out)

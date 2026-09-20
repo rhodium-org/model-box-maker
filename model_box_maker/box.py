@@ -31,6 +31,7 @@ class BoxResult:
     base: tuple[np.ndarray, np.ndarray]
     lid: tuple[np.ndarray, np.ndarray]
     report: dict = field(default_factory=dict)
+    warnings: list[str] = field(default_factory=list)
 
     # ----- geometry helpers used by the preview and the tests
 
@@ -61,7 +62,7 @@ def make_box(model: Model, spec: BoxSpec, orientation: str = "auto",
     mode = "angles" if angles is not None else orientation
     choice = orient.choose(model.vertices, model.faces, spec, mode, angles, max_outer)
     winner = choice.winner
-    layout = geometry.layout_for(winner.cavity, winner.lip_rect, winner.rim_z, spec)
+    layout = geometry.layout_for(winner.cavity, winner.lip_rect, winner.rim_z, spec, winner.exterior)
 
     base_solid = geometry.build_base(winner.cavity, layout)
     lid_solid = geometry.build_lid(layout)
@@ -75,7 +76,8 @@ def make_box(model: Model, spec: BoxSpec, orientation: str = "auto",
             raise RuntimeError(f"the {name} would need support: face {first.face} {first.reason} "
                                f"({len(bad)} such faces); refusing to write it")
 
-    result = BoxResult(model=model, spec=spec, choice=choice, layout=layout, base=base, lid=lid)
+    result = BoxResult(model=model, spec=spec, choice=choice, layout=layout, base=base, lid=lid,
+                       warnings=list(layout.exterior.warnings))
     result.report = build_report(result, max_outer)
     return result
 
@@ -86,7 +88,8 @@ def build_report(result: BoxResult, max_outer) -> dict:
     layout = result.layout
     spec = result.spec
     size = layout.size
-    outer_volume = size[0] * size[1] * size[2]
+    exterior = layout.exterior
+    outer_volume = exterior.footprint_area * size[2]
     cavity_volume = winner.cavity_volume
     free_fraction = None
     if result.model.volume is not None and cavity_volume > 0:
@@ -118,6 +121,16 @@ def build_report(result: BoxResult, max_outer) -> dict:
         "translation_mm": [round(float(t), 6) for t in layout.translation],
         "outer_size_mm": [round(s, 3) for s in size],
         "outer_volume_mm3": round(outer_volume, 1),
+        "exterior": {
+            "outline": exterior.kind,
+            "reason": exterior.reason,
+            "wall_max_mm": spec.wall_max,
+            "footprint_area_mm2": round(exterior.footprint_area, 1),
+            "rectangle_area_mm2": round(exterior.rectangle_area, 1),
+            "tipping_angle_deg": round(exterior.tipping_deg, 1),
+            "tipping_angle_cut_back_deg": round(exterior.tipping_cut_deg, 1),
+            "tipping_angle_rectangle_deg": round(exterior.tipping_rect_deg, 1),
+        },
         "cavity_volume_mm3": round(cavity_volume, 1),
         "free_volume_fraction": None if free_fraction is None else round(free_fraction, 4),
         "rim_z_mm": round(layout.rim_z, 4),

@@ -1,6 +1,6 @@
 uid: REQ-0011
 type: requirement
-status: ratified
+status: implemented
 title: No wall is thinner than the wall thickness
 text: The inner face of the wall is the cavity outline. At the lip, no point of the
   outer face is nearer the outline than the wall thickness. Below the lip the wall

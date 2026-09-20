@@ -25,3 +25,14 @@ graph in `idd/` is the specification the code is built and tested against.
 - Geometry is built with manifold3d from closed solids; the cradle is a
   heightmap that only rounds outward (REQ-0009). If a boolean fails the tool
   raises rather than writing a body.
+- Plan-view profiles are manifold3d CrossSections (`geometry.build_exterior`):
+  the lip is the rounded rectangle intersected with the cavity outline offset
+  by `wall_max - skirt - fit`; body and skirt are offsets of the lip. Never
+  simplify the cut profile beyond removing coincident vertices: the rectangle's
+  sides are exactly the wall from the cavity.
+- The printed lid is the mirror image (in y) of the base outline; the seating
+  transform turns it over about X. Keep the two consistent or an asymmetric
+  outline will not fit.
+- Export cleans meshes to the file's precision (`mesh_io.clean_for_export`);
+  compare geometry in memory with `result.base`, but check files with
+  `load_body`, which is what a slicer sees.

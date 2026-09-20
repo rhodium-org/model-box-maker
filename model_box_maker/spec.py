@@ -30,6 +30,7 @@ class BoxSpec:
 
     clearance: float = 1.0
     wall: float = 2.4
+    wall_max: float = 5.0  # greatest wall below the lip, seen from above (REQ-0012)
     floor: float = 3.0
     top_space: float = 2.0
     lip: float = 6.0
@@ -52,7 +53,7 @@ class BoxSpec:
 
     def validate(self) -> None:
         positive = (
-            "clearance", "wall", "floor", "top_space", "lip", "lid_plate",
+            "clearance", "wall", "wall_max", "floor", "top_space", "lip", "lid_plate",
             "skirt", "fit", "pitch", "max_hole", "band",
         )
         for name in positive:
@@ -73,6 +74,10 @@ class BoxSpec:
                 )
         if self.fit >= self.lip:
             raise SpecError("--fit", f"must be smaller than the lip height ({self.lip} mm), got {self.fit}")
+        least = self.wall + self.skirt + self.fit
+        if self.wall_max < least - 1e-9:
+            raise SpecError("--wall-max", f"must be at least the wall, the skirt and the fit gap together "
+                                          f"({least:g} mm), got {self.wall_max}")
         if self.walls not in WALL_PATTERNS:
             raise SpecError("--walls", f"must be one of {', '.join(WALL_PATTERNS)}, got {self.walls}")
 
@@ -98,6 +103,6 @@ class BoxSpec:
 def dimension_names() -> list[str]:
     """The dimension fields in the order REQ-0003 lists them."""
     return [
-        "clearance", "wall", "floor", "top_space", "lip", "lid_plate",
+        "clearance", "wall", "wall_max", "floor", "top_space", "lip", "lid_plate",
         "skirt", "fit", "corner_radius", "pitch",
     ]

@@ -2,9 +2,10 @@ uid: TEST-0034
 type: test
 status: ratified
 title: A tippy outline keeps the rectangle and says so
-text: An L bracket kept standing whose cut-back footprint would tip below 20 degrees
-  is boxed with the full rectangle and the report says why; a flat plate reports
-  a tipping angle over 45 degrees with the cut-back outline.
+text: A triangular prism kept standing on its end, whose cut-back footprint would
+  tip below 20 degrees while the full rectangle would not, is boxed with the full
+  rectangle and the report says why; a flat plate reports a tipping angle over 45
+  degrees with the cut-back outline.
 normative: false
 links:
 - target: REQ-0021
@@ -12,12 +13,13 @@ links:
 attrs:
   origin: ai
   ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:ab0243bf4ee7ca8601fb6225fdacd536241b358485f59b574fe14f5982c7d3d5
+  ratified_fingerprint: sha256:6cd03cd8fd6b1f49f98b8e58556a30fe0e8170293e8f8c9137a73eb1a4f4c5f4
   ratified_content:
     type: test
-    text: An L bracket kept standing whose cut-back footprint would tip below 20
-      degrees is boxed with the full rectangle and the report says why; a flat plate
-      reports a tipping angle over 45 degrees with the cut-back outline.
+    text: A triangular prism kept standing on its end, whose cut-back footprint would
+      tip below 20 degrees while the full rectangle would not, is boxed with the
+      full rectangle and the report says why; a flat plate reports a tipping angle
+      over 45 degrees with the cut-back outline.
     normative: false
     derived: false
     attrs: {}

@@ -1,6 +1,6 @@
 uid: REQ-0012
 type: requirement
-status: ratified
+status: implemented
 title: Seen from above, the box is cut back to a wall of bounded thickness
 text: Seen from above, the closed box is the smallest rounded rectangle around the
   cavity, cut back wherever the wall would be thicker than --wall-max, so that no

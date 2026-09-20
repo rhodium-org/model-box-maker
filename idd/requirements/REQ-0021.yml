@@ -1,6 +1,6 @@
 uid: REQ-0021
 type: requirement
-status: ratified
+status: implemented
 title: The cut-back box still stands
 text: The base stands on its flat underside. The tool takes the footprint of the
   closed box, the convex hull of that footprint, and the distance from the footprint's

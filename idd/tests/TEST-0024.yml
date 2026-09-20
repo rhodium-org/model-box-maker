@@ -1,6 +1,6 @@
 uid: TEST-0024
 type: test
-status: ratified
+status: implemented
 title: A lattice takes material only from the panels
 text: With --walls hex and --walls diamond, the patterned base lies within the solid
   base, the removed material lies within --wall-max plus the cut depth of the cavity

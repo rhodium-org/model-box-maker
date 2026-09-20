@@ -20,6 +20,8 @@ from .spec import WALL_PATTERNS, BoxSpec, SpecError
 DIMENSION_HELP = {
     "clearance": "space kept around the model in every direction",
     "wall": "wall thickness at the lip, the thinnest wall anywhere",
+    "wall_max": "greatest wall thickness below the lip, seen from above; the box is cut back to it "
+                "(larger than the box keeps the full rectangle)",
     "floor": "floor thickness under the lowest point of the cradle",
     "top_space": "space between the highest point of the model and the lid",
     "lip": "height of the lip the lid closes over",
@@ -96,7 +98,8 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     try:
         spec = BoxSpec(
-            clearance=args.clearance, wall=args.wall, floor=args.floor, top_space=args.top_space,
+            clearance=args.clearance, wall=args.wall, wall_max=args.wall_max, floor=args.floor,
+            top_space=args.top_space,
             lip=args.lip, lid_plate=args.lid_plate, skirt=args.skirt, fit=args.fit,
             corner_radius=args.corner_radius, pitch=args.pitch, size_tolerance=args.size_tolerance,
             walls=args.walls, max_hole=args.max_hole, band=args.band,
@@ -119,6 +122,8 @@ def main(argv: list[str] | None = None) -> int:
         if warning:
             print(warning, file=sys.stderr)
         result = make_box(model, spec, orientation=mode, angles=angles, max_outer=limit)
+        for line in result.warnings:
+            print(line, file=sys.stderr)
         paths = write_outputs(result, args.out, stem, fmt=args.format, preview=args.preview)
     except (ModelError, OrientationError, RuntimeError, OSError) as exc:
         print(f"model-box-maker: {_one_line(exc)}", file=sys.stderr)
@@ -128,7 +133,7 @@ def main(argv: list[str] | None = None) -> int:
     w, d, h = result.layout.size
     euler = result.choice.winner.euler_xyz()
     print(f"pose: {result.choice.winner.label} (X {euler[0]:.1f}, Y {euler[1]:.1f}, Z {euler[2]:.1f} deg); "
-          f"box {w:.1f} x {d:.1f} x {h:.1f} mm")
+          f"box {w:.1f} x {d:.1f} x {h:.1f} mm, outline {result.layout.exterior.kind}")
     return 0
 
 

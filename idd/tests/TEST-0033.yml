@@ -1,6 +1,6 @@
 uid: TEST-0033
 type: test
-status: ratified
+status: implemented
 title: A round model is cut back; a large --wall-max restores the rectangle
 text: A cylinder kept standing on its end is boxed. The footprint of the closed box
   is at least 15 percent smaller than the rectangle's, every point of the outside
