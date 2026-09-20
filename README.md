@@ -11,7 +11,7 @@ model-box-maker figurine.stl -o out --preview
 ```
 
 Pure Python; every dependency ships binary wheels (numpy, scipy, trimesh,
-manifold3d, rtree, networkx). No CAD kernel or external program.
+manifold3d, rtree, networkx, lxml). No CAD kernel or external program.
 
 **Status: implemented against the requirements graph in `idd/`.** All 66
 items are ratified; the 20 requirements, 2 NFRs and 32 tests are at

@@ -16,6 +16,7 @@ dependencies = [
     "manifold3d>=3.0",
     "rtree>=1.1",
     "networkx>=3.0",
+    "lxml>=5.0",
 ]
 
 [project.optional-dependencies]
