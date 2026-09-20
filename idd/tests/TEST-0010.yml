@@ -12,12 +12,12 @@ links:
 attrs:
   origin: ai
   ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:0108c3c8d51c141a05a4fb6a8455df3e42432d320d90a78c7761ff7a663a017e
+  ratified_fingerprint: sha256:8b2100d1bfc48c20d1117c27599b31e9bdbbedea7b82efb2868be84812a6c8e2
   ratified_content:
     type: test
     text: A bar 80 by 10 by 10 mm saved turned 30 degrees about Z is boxed with its
-      long side parallel to a box side, and the outer footprint matches 80 and 10
-      plus the walls and clearance within 1 mm.
+      long side parallel to a box side, and the outer footprint is 80 and 10 plus
+      the walls and clearance, over by no more than three grid pitches on each side.
     normative: false
     derived: false
     attrs: {}

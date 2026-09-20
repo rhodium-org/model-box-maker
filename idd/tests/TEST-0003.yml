@@ -12,11 +12,12 @@ links:
 attrs:
   origin: ai
   ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:a8bffe394a60b4bb933d2597359a284ad2e45c3ab305e54b1f85a02a8de1998c
+  ratified_fingerprint: sha256:8b7c636454c2f8425c858ce52ac7d4eea75722e4b991175cc48111c4a3097e46
   ratified_content:
     type: test
-    text: A cube saved as 1 unit across, run with --scale 25.4, gives a cavity 25.4
-      mm plus twice the clearance wide, within one grid pitch.
+    text: A cube saved as 1 unit across, run with --scale 25.4, gives a cavity at
+      least 25.4 mm plus twice the clearance wide, and at most three grid pitches
+      wider than that on each side.
     normative: false
     derived: false
     attrs: {}

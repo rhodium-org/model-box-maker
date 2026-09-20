@@ -12,11 +12,13 @@ links:
 attrs:
   origin: ai
   ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:e7f9b3f4260ff29e4193e6adedc62f64b3329b72bf40e6ee476f1c28bf815218
+  ratified_fingerprint: sha256:856b27161f4d85b88db997c4e17dcfaaf92269270d0bb642c0403a24cc245c43
   ratified_content:
     type: test
-    text: 'The base computed at 1.0 mm pitch lies within the base computed at 0.25
-      mm pitch: every sampled point on the coarse base is inside or on the fine base.'
+    text: The cavity computed at 1.0 mm pitch contains the cavity computed at 0.25
+      mm pitch. The coarse outline contains the fine outline, and over every cell
+      the model itself projects onto, the coarse cradle floor is at or below the
+      fine one.
     normative: false
     derived: false
     attrs: {}
