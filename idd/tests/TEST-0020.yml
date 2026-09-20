@@ -1,6 +1,6 @@
 uid: TEST-0020
 type: test
-status: implemented
+status: verified
 title: The outside stays between the wall and the greatest wall from the cavity
 text: Every point of the base's outer outline lies at least the wall thickness and
   at most --wall-max from the cavity outline. Where the outline coincides with the
