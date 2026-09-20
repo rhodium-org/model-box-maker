@@ -14,7 +14,7 @@ import zipfile
 import numpy as np
 import pytest
 import trimesh
-from lxml import etree
+import xml.etree.ElementTree as etree
 
 from model_box_maker import printcheck
 from model_box_maker.geometry import rounded_rect_sdf
