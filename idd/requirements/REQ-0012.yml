@@ -1,17 +1,27 @@
 uid: REQ-0012
 type: requirement
-status: verified
-title: The outside is a cuboid with rounded vertical edges
-text: The closed box is a cuboid. Its vertical edges are rounded to the corner radius,
-  which may be zero. The top of the lid and the underside of the base are flat.
-rationale: A cuboid stacks, wraps in paper and takes a label. Rounded vertical edges
-  spread a corner impact and stop a crack starting at the corner.
+status: suspect
+title: Seen from above, the box is cut back to a wall of bounded thickness
+text: Seen from above, the closed box is the smallest rounded rectangle around the
+  cavity, cut back wherever the wall would be thicker than --wall-max, so that no
+  point of the outside is further than --wall-max from the cavity and none is nearer
+  than the wall thickness. Where the rectangle remains, its vertical edges keep the
+  corner radius. A cut-back edge follows the cavity outline at a constant distance
+  and is rounded by construction. The lid has the same outline as the base. The top
+  of the lid and the underside of the base are flat. --wall-max defaults to 5 mm;
+  a value larger than the box keeps the full rectangle.
+rationale: 'Henry, 2026-09-20: a cuboid spends its corners on nothing, so cut the
+  box back, seen from above, until the wall is only a parameter with a bounded thickness.
+  Every face that can carry a lid or a label stays flat, and the floor and the lid
+  top stay flat because a conformal top or underside would need support to print
+  (CON-0001). The rectangle is kept wherever it lies within reach of the wall, so
+  a boxy model gets the same box as before and a round one loses its corners.'
 normative: true
 links:
 - target: INT-0001
   type: derives_from
 attrs:
-  priority: should
+  priority: must
   origin: ai
   ratified_by: Henry Grech-Cini
   ratified_fingerprint: sha256:e5339d3120aba403fd5032b8eb4d9d54fb39f376b748fba467907fbb684134b4

@@ -1,10 +1,11 @@
 uid: TEST-0020
 type: test
-status: verified
-title: The outside is a rounded cuboid
-text: The base's outer outline is a rectangle with corners rounded to the corner
-  radius, sharp when the radius is zero, and the base underside and the lid top are
-  each a single plane.
+status: suspect
+title: The outside stays between the wall and the greatest wall from the cavity
+text: Every point of the base's outer outline lies at least the wall thickness and
+  at most --wall-max from the cavity outline. Where the outline coincides with the
+  rectangle, its corners are rounded to the corner radius, sharp when the radius
+  is zero. The base underside and the lid top are each a single plane.
 normative: false
 links:
 - target: REQ-0012

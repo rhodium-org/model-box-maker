@@ -1,9 +1,10 @@
 uid: TEST-0024
 type: test
-status: verified
+status: suspect
 title: A lattice takes material only from the panels
 text: With --walls hex and --walls diamond, the patterned base lies within the solid
-  base, the removed material lies only inside the panel regions left by the bands,
+  base, the removed material lies within --wall-max plus the cut depth of the cavity
+  outline, above the cradle beside it plus the band height, and below the lip band,
   no hole holds a circle wider than --max-hole, and the overhang check of REQ-0017
   passes.
 normative: false

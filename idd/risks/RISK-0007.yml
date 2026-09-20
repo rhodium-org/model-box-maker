@@ -1,0 +1,13 @@
+uid: RISK-0007
+type: risk
+status: proposed
+title: A cut-back box tips over
+text: Once the outside follows the cavity, a model with a narrow or lopsided outline
+  gives a footprint whose support polygon is smaller than the rectangle's, and the
+  box can be knocked over where the cuboid would have stood.
+rationale: The cuboid never had this problem because its footprint was the whole
+  bounding rectangle. Cutting it back trades that margin for material, so the margin
+  has to be checked rather than assumed.
+normative: true
+attrs:
+  origin: ai

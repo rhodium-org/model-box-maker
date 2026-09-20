@@ -1,0 +1,15 @@
+uid: TEST-0033
+type: test
+status: proposed
+title: A round model is cut back; a large --wall-max restores the rectangle
+text: A cylinder kept standing on its end is boxed. The footprint of the closed box
+  is at least 15 percent smaller than the rectangle's, every point of the outside
+  is within --wall-max of the cavity and none nearer than the wall, the base is one
+  connected body, and with --wall-max 100 the footprint equals the rectangle's within
+  0.1 percent.
+normative: false
+links:
+- target: REQ-0012
+  type: verifies
+attrs:
+  origin: ai

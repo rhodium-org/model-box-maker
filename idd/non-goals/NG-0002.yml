@@ -3,10 +3,12 @@ type: non_goal
 status: ratified
 title: Not a general packaging designer
 text: One model per box. The tool does not nest several models, does not shape the
-  outside of the box to the model, does not generate foam or card inserts, does not
-  slice, and does not look up postage rates or size bands.
-rationale: A cuboid outside stacks, wraps and takes a label. Each excluded feature
-  is a different tool and none of them makes the one model safer.
+  top or the underside of the box to the model, does not generate foam or card inserts,
+  does not slice, and does not look up postage rates or size bands.
+rationale: Each excluded feature is a different tool and none of them makes the one
+  model safer. The plan outline may follow the model (REQ-0012) because vertical
+  walls print without support. A conformal top or underside would need support (CON-0001),
+  and a flat underside is what stands on a table.
 normative: false
 attrs:
   origin: ai
