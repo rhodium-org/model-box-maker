@@ -1,6 +1,6 @@
 uid: REQ-0018
 type: requirement
-status: proposed
+status: ratified
 title: A preview shows the model sitting in its box
 text: With --preview the tool also writes <stem>-preview.3mf holding three named
   objects, the base, the lid lifted clear above it, and the model in its rest pose,
@@ -16,3 +16,14 @@ links:
 attrs:
   priority: should
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:2e3245b97fb40dddd49a54e02c56bcae0bbe60b0508383cd4035533d7fb1f0a3
+  ratified_content:
+    type: requirement
+    text: With --preview the tool also writes <stem>-preview.3mf holding three named
+      objects, the base, the lid lifted clear above it, and the model in its rest
+      pose, so the fit can be looked at in a slicer or viewer before printing.
+    normative: true
+    derived: false
+    attrs:
+      priority: should

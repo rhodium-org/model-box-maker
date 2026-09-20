@@ -1,6 +1,6 @@
 uid: REQ-0001
 type: requirement
-status: proposed
+status: ratified
 title: Reads a model from a common mesh file
 text: The tool reads a model from an STL (binary or ASCII), OBJ, 3MF or PLY file.
   The file need not be watertight. A file that cannot be read, holds no triangles,
@@ -17,3 +17,15 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:6b485fd462b8807f0ff074650a805e3c65f1c5436cfcce1261648fd21763413b
+  ratified_content:
+    type: requirement
+    text: The tool reads a model from an STL (binary or ASCII), OBJ, 3MF or PLY file.
+      The file need not be watertight. A file that cannot be read, holds no triangles,
+      has a non-finite vertex, or has zero extent in any direction is refused with
+      a one-line message naming the fault, and nothing is written.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

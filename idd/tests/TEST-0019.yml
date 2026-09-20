@@ -1,6 +1,6 @@
 uid: TEST-0019
 type: test
-status: proposed
+status: ratified
 title: The wall is never thinner than the wall thickness
 text: The shortest horizontal distance from the cavity outline to the outer face,
   measured all round and at the lip, is at least the wall thickness less 0.01 mm,
@@ -11,3 +11,13 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:b2b23d1b66df6e38174c29eb55ec47b3f591e6fe60e7ae11acdaa4a016dd1340
+  ratified_content:
+    type: test
+    text: The shortest horizontal distance from the cavity outline to the outer face,
+      measured all round and at the lip, is at least the wall thickness less 0.01
+      mm, for corner radii of 0, 3 and 10 mm.
+    normative: false
+    derived: false
+    attrs: {}

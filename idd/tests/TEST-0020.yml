@@ -1,6 +1,6 @@
 uid: TEST-0020
 type: test
-status: proposed
+status: ratified
 title: The outside is a rounded cuboid
 text: The base's outer outline is a rectangle with corners rounded to the corner
   radius, sharp when the radius is zero, and the base underside and the lid top are
@@ -11,3 +11,13 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:aaede2102529faee00238502da66df2bd58dd3d07352b0a92fb995db32a4df83
+  ratified_content:
+    type: test
+    text: The base's outer outline is a rectangle with corners rounded to the corner
+      radius, sharp when the radius is zero, and the base underside and the lid top
+      are each a single plane.
+    normative: false
+    derived: false
+    attrs: {}

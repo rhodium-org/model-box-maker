@@ -1,6 +1,6 @@
 uid: REQ-0014
 type: requirement
-status: proposed
+status: ratified
 title: The seated lid never reaches the model
 text: The rim stands at least the top space above the highest point of the model
   in its rest pose. Below the rim plane the lid has only its skirt, and the skirt
@@ -18,3 +18,15 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:fb59ef0cee4012f3e80f2dd70412d0fe5059cc8cf5c66e59bb826a126550d624
+  ratified_content:
+    type: requirement
+    text: The rim stands at least the top space above the highest point of the model
+      in its rest pose. Below the rim plane the lid has only its skirt, and the skirt
+      lies wholly outside the base wall. So no part of the seated lid, and no part
+      of the lid on its way down, enters the cavity.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

@@ -1,6 +1,6 @@
 uid: REQ-0008
 type: requirement
-status: proposed
+status: ratified
 title: The cavity is the model's drop path, grown by the clearance
 text: The model in its chosen pose is grown outward by the clearance in every direction.
   The cavity is every point that grown model passes through when it is lifted straight
@@ -23,3 +23,17 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:4482365dff510285d67b701b8e8a1dd556193852a989f6fe1ef42e2cf3949ace
+  ratified_content:
+    type: requirement
+    text: The model in its chosen pose is grown outward by the clearance in every
+      direction. The cavity is every point that grown model passes through when it
+      is lifted straight up out of the box, from its rest position to above the rim.
+      So the cavity walls are vertical, the floor follows the underside of the grown
+      model, and every part of the model has box material below it at the clearance
+      distance.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

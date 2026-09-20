@@ -1,6 +1,6 @@
 uid: REQ-0017
 type: requirement
-status: proposed
+status: ratified
 title: Every output prints without support
 text: In the orientation written, no downward-facing face of either body leans more
   than 45 degrees from vertical unless it lies on the bed. In a lattice no unsupported
@@ -16,3 +16,15 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:96c70e6f614a13c775294a2862f25413b7e94f3fd763d0897f7e76a0d47e9264
+  ratified_content:
+    type: requirement
+    text: In the orientation written, no downward-facing face of either body leans
+      more than 45 degrees from vertical unless it lies on the bed. In a lattice
+      no unsupported span is longer than 5 mm. The tool checks both before writing
+      and refuses, naming the face, rather than write a body that needs support.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

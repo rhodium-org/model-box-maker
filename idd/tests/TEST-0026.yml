@@ -1,6 +1,6 @@
 uid: TEST-0026
 type: test
-status: proposed
+status: ratified
 title: Two closed bodies, each the way it prints
 text: Both files load as watertight manifold bodies with positive volume. The base's
   underside is on Z zero and its cavity is open at its top. The lid's plate is on
@@ -12,3 +12,14 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:87154f44bf2eff59a64a071e9886b842cacee135e8eb38c46a97c675cb8dc5a1
+  ratified_content:
+    type: test
+    text: Both files load as watertight manifold bodies with positive volume. The
+      base's underside is on Z zero and its cavity is open at its top. The lid's
+      plate is on Z zero and its skirt rises from it. --format 3mf writes 3MF files
+      that load the same way.
+    normative: false
+    derived: false
+    attrs: {}

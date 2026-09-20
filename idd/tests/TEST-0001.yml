@@ -1,6 +1,6 @@
 uid: TEST-0001
 type: test
-status: proposed
+status: ratified
 title: Every supported format gives the same box
 text: The same model saved as binary STL, ASCII STL, OBJ, 3MF and PLY produces bases
   whose volumes agree within 0.1 percent and whose reports show the same pose.
@@ -10,3 +10,13 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:c5aba311d8d08a87a9bafd0735e0daabc28b6d3e8e751bb38b2edcf874809525
+  ratified_content:
+    type: test
+    text: The same model saved as binary STL, ASCII STL, OBJ, 3MF and PLY produces
+      bases whose volumes agree within 0.1 percent and whose reports show the same
+      pose.
+    normative: false
+    derived: false
+    attrs: {}

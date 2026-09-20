@@ -1,6 +1,6 @@
 uid: REQ-0011
 type: requirement
-status: proposed
+status: ratified
 title: No wall is thinner than the wall thickness
 text: The inner face of the wall is the cavity outline. The outer face is the smallest
   rounded rectangle that keeps every point of the outline at least the wall thickness
@@ -17,3 +17,16 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:11237ceb99666332dfb2580b0f6760e27f2dc671f715a76a715af07c98edc9e6
+  ratified_content:
+    type: requirement
+    text: The inner face of the wall is the cavity outline. The outer face is the
+      smallest rounded rectangle that keeps every point of the outline at least the
+      wall thickness from the outside. Below the lip the wall is thicker by the skirt
+      thickness and the fit gap, so the lid sits flush. Rounding the vertical edges
+      never cuts inside that thickness.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

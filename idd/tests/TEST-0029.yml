@@ -1,6 +1,6 @@
 uid: TEST-0029
 type: test
-status: proposed
+status: ratified
 title: A re-run is byte-identical
 text: Two runs on the same model with the same options produce identical hashes for
   every file written.
@@ -10,3 +10,12 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:f1d7db0ee73319be6f813763f527077138aafcd7b99aa3b29b6c0e59230cc31d
+  ratified_content:
+    type: test
+    text: Two runs on the same model with the same options produce identical hashes
+      for every file written.
+    normative: false
+    derived: false
+    attrs: {}

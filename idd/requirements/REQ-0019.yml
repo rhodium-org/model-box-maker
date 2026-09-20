@@ -1,6 +1,6 @@
 uid: REQ-0019
 type: requirement
-status: proposed
+status: ratified
 title: The same input and options give the same files
 text: Running the tool twice on the same model with the same options writes byte-identical
   files, the report included. Candidate ordering, tie-breaking and mesh output are
@@ -15,3 +15,14 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:412d058fdeca2bd2c68c21e06de137949ae34a7bef7f45fc151410fc1a4a5cfa
+  ratified_content:
+    type: requirement
+    text: Running the tool twice on the same model with the same options writes byte-identical
+      files, the report included. Candidate ordering, tie-breaking and mesh output
+      are deterministic and no output carries a timestamp.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

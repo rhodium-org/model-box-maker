@@ -1,6 +1,6 @@
 uid: REQ-0002
 type: requirement
-status: proposed
+status: ratified
 title: Model units and scale
 text: The model is read as millimetres. The option --scale multiplies every coordinate
   before anything else happens, so a file authored in inches is handled with --scale
@@ -18,3 +18,16 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:8ab43ab8c6991cb6a84b24e2df4aa4930886a70a3fd702fc755ad847d92bb1d8
+  ratified_content:
+    type: requirement
+    text: The model is read as millimetres. The option --scale multiplies every coordinate
+      before anything else happens, so a file authored in inches is handled with
+      --scale 25.4. When the scaled model is under 5 mm or over 300 mm in its longest
+      direction the tool warns on stderr that the units may be wrong and carries
+      on.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

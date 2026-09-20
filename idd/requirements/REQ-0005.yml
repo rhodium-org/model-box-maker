@@ -1,6 +1,6 @@
 uid: REQ-0005
 type: requirement
-status: proposed
+status: ratified
 title: The orientation can be fixed by hand
 text: --orientation keep uses the model as saved, with the file's Z axis up. --orientation
   RX,RY,RZ rotates the model by those angles in degrees about the X, Y and Z axes
@@ -18,3 +18,16 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:7e16b885ae1ace19b7d18174280339a011d2a92f782c0752a2657926ce5c92ec
+  ratified_content:
+    type: requirement
+    text: --orientation keep uses the model as saved, with the file's Z axis up.
+      --orientation RX,RY,RZ rotates the model by those angles in degrees about the
+      X, Y and Z axes in that order and uses that pose. In both cases the pose is
+      used exactly as given, with no further turn about the vertical. The report
+      records which orientation mode was used.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

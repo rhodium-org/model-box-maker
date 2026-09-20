@@ -1,6 +1,6 @@
 uid: REQ-0015
 type: requirement
-status: proposed
+status: ratified
 title: Walls can be opened into a lattice
 text: --walls takes solid, hex or diamond, and defaults to solid. With a pattern,
   each of the four wall panels is cut through with that lattice. No hole is wider
@@ -20,3 +20,18 @@ links:
 attrs:
   priority: could
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:170f9db7ac6f9f72d156be473884f1575e6258a89eba33c5cc8ea907af2ba5c7
+  ratified_content:
+    type: requirement
+    text: --walls takes solid, hex or diamond, and defaults to solid. With a pattern,
+      each of the four wall panels is cut through with that lattice. No hole is wider
+      than --max-hole, default 6 mm. Solid material stays at every vertical edge,
+      over the whole lip and the wall for the band height below it, and from the
+      underside of the base up to the highest point of the cradle plus the band height.
+      The band height is the option --band, default 4 mm. Every hole prints without
+      support.
+    normative: true
+    derived: false
+    attrs:
+      priority: could

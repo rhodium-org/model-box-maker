@@ -1,6 +1,6 @@
 uid: RISK-0005
 type: risk
-status: proposed
+status: ratified
 title: The model rattles inside its clearance
 text: Clearance protects the model from flex but lets it move. A model that moves
   freely strikes the cradle on every knock.
@@ -10,3 +10,12 @@ rationale: This risk and RISK-0002 pull in opposite directions. A small clearanc
 normative: true
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:dc0b01da98ace51e0446d09b2f66eeaa7938fd45433bfa045da83e34e4644ecb
+  ratified_content:
+    type: risk
+    text: Clearance protects the model from flex but lets it move. A model that moves
+      freely strikes the cradle on every knock.
+    normative: true
+    derived: false
+    attrs: {}

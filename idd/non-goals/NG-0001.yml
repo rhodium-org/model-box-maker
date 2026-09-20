@@ -1,6 +1,6 @@
 uid: NG-0001
 type: non_goal
-status: proposed
+status: ratified
 title: No hinge, latch, snap or living joint
 text: The lid is held by the fit of its skirt over the lip and by whatever tape the
   sender adds. The tool does not add a hinge, a latch, a snap or a flexing joint.
@@ -9,3 +9,13 @@ rationale: The operator asked for a lip and no hinge. A printed hinge or snap is
 normative: false
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:e27c1420a9de4c9391c3780d11880e2651fc7fb5cdc730e4b81af3a15d04db9e
+  ratified_content:
+    type: non_goal
+    text: The lid is held by the fit of its skirt over the lip and by whatever tape
+      the sender adds. The tool does not add a hinge, a latch, a snap or a flexing
+      joint.
+    normative: false
+    derived: false
+    attrs: {}

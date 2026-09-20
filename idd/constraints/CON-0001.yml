@@ -1,6 +1,6 @@
 uid: CON-0001
 type: constraint
-status: proposed
+status: ratified
 title: Parts print on a desktop FDM printer without support
 text: Every output body prints on an ordinary desktop FDM printer, in the orientation
   it is written, with no support material. Walls, floors and skirts are sized in
@@ -12,3 +12,13 @@ rationale: The operator's printer is a desktop FDM machine. Support inside the c
 normative: true
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:6bf18c32442c595e1380ebff20c315f55f250a5a45d5e15a85e379e2529cf705
+  ratified_content:
+    type: constraint
+    text: Every output body prints on an ordinary desktop FDM printer, in the orientation
+      it is written, with no support material. Walls, floors and skirts are sized
+      in whole 0.4 mm nozzle lines.
+    normative: true
+    derived: false
+    attrs: {}

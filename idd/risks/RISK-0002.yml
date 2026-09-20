@@ -1,6 +1,6 @@
 uid: RISK-0002
 type: risk
-status: proposed
+status: ratified
 title: The cradle grips the model when the walls flex
 text: A cavity cut to the exact shape of the model touches it everywhere. Any flex
   in the walls or floor then bears on the model, which can be marked, bent or cracked.
@@ -9,3 +9,13 @@ rationale: The box is a thin printed shell and will flex when pressed. The model
 normative: true
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:0eda01fa9b75da84aaf9023656872f9501099253dd437a32b12daa7ee316e082
+  ratified_content:
+    type: risk
+    text: A cavity cut to the exact shape of the model touches it everywhere. Any
+      flex in the walls or floor then bears on the model, which can be marked, bent
+      or cracked.
+    normative: true
+    derived: false
+    attrs: {}

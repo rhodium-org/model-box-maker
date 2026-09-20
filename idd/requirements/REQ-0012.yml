@@ -1,6 +1,6 @@
 uid: REQ-0012
 type: requirement
-status: proposed
+status: ratified
 title: The outside is a cuboid with rounded vertical edges
 text: The closed box is a cuboid. Its vertical edges are rounded to the corner radius,
   which may be zero. The top of the lid and the underside of the base are flat.
@@ -13,3 +13,14 @@ links:
 attrs:
   priority: should
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:e5339d3120aba403fd5032b8eb4d9d54fb39f376b748fba467907fbb684134b4
+  ratified_content:
+    type: requirement
+    text: The closed box is a cuboid. Its vertical edges are rounded to the corner
+      radius, which may be zero. The top of the lid and the underside of the base
+      are flat.
+    normative: true
+    derived: false
+    attrs:
+      priority: should

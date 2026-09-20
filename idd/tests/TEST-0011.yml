@@ -1,6 +1,6 @@
 uid: TEST-0011
 type: test
-status: proposed
+status: ratified
 title: A fixed orientation is used exactly
 text: --orientation keep reports the identity rotation and a cradle matching the
   file's underside. --orientation 90,0,0 reports a rotation equal to that matrix
@@ -11,3 +11,13 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:b50c10fdd58215dd9730e0c4409ad5672aa81a0b4875c9944cd8f75ae2f71689
+  ratified_content:
+    type: test
+    text: --orientation keep reports the identity rotation and a cradle matching
+      the file's underside. --orientation 90,0,0 reports a rotation equal to that
+      matrix within 1e-6. Neither run turns the model about the vertical.
+    normative: false
+    derived: false
+    attrs: {}

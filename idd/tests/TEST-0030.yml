@@ -1,6 +1,6 @@
 uid: TEST-0030
 type: test
-status: proposed
+status: ratified
 title: Exit codes and messages
 text: A good run exits 0 and prints the paths and a one-line pose summary. A missing
   model path exits 2 with usage. A refused model exits 1 with one line. After a failure
@@ -11,3 +11,13 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:58b5b7f039f7a29d0cbe90d8df424050e844b9d1fa3844e45b429cd6a6bd8628
+  ratified_content:
+    type: test
+    text: A good run exits 0 and prints the paths and a one-line pose summary. A
+      missing model path exits 2 with usage. A refused model exits 1 with one line.
+      After a failure no output file exists.
+    normative: false
+    derived: false
+    attrs: {}

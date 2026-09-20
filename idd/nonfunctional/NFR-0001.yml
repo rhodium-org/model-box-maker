@@ -1,6 +1,6 @@
 uid: NFR-0001
 type: nfr
-status: proposed
+status: ratified
 title: A typical model is boxed within a minute
 text: A model of up to 200 000 triangles and up to 150 mm across, at the default
   options, finishes within 60 seconds on the machine that runs the test suite.
@@ -14,3 +14,12 @@ links:
   type: derives_from
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:8a99f2e6d95fa9c33f8040de7424a788bd6aef7b6926971785909093e1d5dfa8
+  ratified_content:
+    type: nfr
+    text: A model of up to 200 000 triangles and up to 150 mm across, at the default
+      options, finishes within 60 seconds on the machine that runs the test suite.
+    normative: true
+    derived: false
+    attrs: {}

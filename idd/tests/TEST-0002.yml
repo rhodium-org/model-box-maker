@@ -1,6 +1,6 @@
 uid: TEST-0002
 type: test
-status: proposed
+status: ratified
 title: A broken model is refused before anything is written
 text: An empty file, a file with a NaN vertex, and a set of coplanar triangles with
   zero height each make the tool exit 1 with one line naming the fault, and the output
@@ -11,3 +11,13 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:198a6389135a7d47b58ae953b2585b477969a0a3d21b1c244024d9cbe592bbfb
+  ratified_content:
+    type: test
+    text: An empty file, a file with a NaN vertex, and a set of coplanar triangles
+      with zero height each make the tool exit 1 with one line naming the fault,
+      and the output directory stays empty.
+    normative: false
+    derived: false
+    attrs: {}

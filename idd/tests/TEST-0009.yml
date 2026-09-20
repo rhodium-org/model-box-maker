@@ -1,6 +1,6 @@
 uid: TEST-0009
 type: test
-status: proposed
+status: ratified
 title: A plate lies flat
 text: A 100 by 100 by 3 mm plate saved standing on edge is laid flat, and the closed
   box is under 15 mm tall.
@@ -10,3 +10,12 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:de98c6fe9138578a489324f423113df8508105579c499a42d2ca9b4477444705
+  ratified_content:
+    type: test
+    text: A 100 by 100 by 3 mm plate saved standing on edge is laid flat, and the
+      closed box is under 15 mm tall.
+    normative: false
+    derived: false
+    attrs: {}

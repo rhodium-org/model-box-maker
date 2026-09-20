@@ -1,6 +1,6 @@
 uid: REQ-0013
 type: requirement
-status: proposed
+status: ratified
 title: The lid closes over a lip and stops on the rim
 text: The top of the base wall, over the lip height, is stepped in on the outside
   by the skirt thickness plus the fit gap to form the lip. The lid is a flat plate
@@ -23,3 +23,17 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:0dda393b33f03aae624e5ae942fe1eaf76fcc906a40b4d71d5119963e0e54ffa
+  ratified_content:
+    type: requirement
+    text: The top of the base wall, over the lip height, is stepped in on the outside
+      by the skirt thickness plus the fit gap to form the lip. The lid is a flat
+      plate with a skirt that slides down over the lip. When seated the plate rests
+      on the rim of the base, the skirt outer face is flush with the wall below the
+      lip, and the skirt inner face stands the fit gap from the lip. The lid cannot
+      travel lower than the rim. Nothing holds the lid on but the fit.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

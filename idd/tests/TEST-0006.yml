@@ -1,6 +1,6 @@
 uid: TEST-0006
 type: test
-status: proposed
+status: ratified
 title: A bad dimension fails fast
 text: A negative clearance, a zero floor and a wall of 0.4 mm each exit 2 with a
   message naming the option, in under a second, with nothing written.
@@ -10,3 +10,12 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:744d9b3d4988a635b6d63e7c5e3481179c3b9a48b215f0e19c8d1b26f38a6cc1
+  ratified_content:
+    type: test
+    text: A negative clearance, a zero floor and a wall of 0.4 mm each exit 2 with
+      a message naming the option, in under a second, with nothing written.
+    normative: false
+    derived: false
+    attrs: {}

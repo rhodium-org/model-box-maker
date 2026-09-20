@@ -1,6 +1,6 @@
 uid: TEST-0032
 type: test
-status: proposed
+status: ratified
 title: Installs into a fresh environment
 text: pip install of the package into a clean virtual environment on Python 3.10
   completes using wheels only, and model-box-maker --help then runs.
@@ -10,3 +10,12 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:d633b8b59b55fb938a56b4d920c3909592f1edd02b15fcc92e0b62943094d413
+  ratified_content:
+    type: test
+    text: pip install of the package into a clean virtual environment on Python 3.10
+      completes using wheels only, and model-box-maker --help then runs.
+    normative: false
+    derived: false
+    attrs: {}

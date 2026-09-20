@@ -1,6 +1,6 @@
 uid: TEST-0028
 type: test
-status: proposed
+status: ratified
 title: The preview holds base, lid and model
 text: The preview 3MF has three objects named base, lid and model, the model's transform
   equals the report's rotation and translation, and the lid sits wholly above the
@@ -11,3 +11,13 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:33166fc05db48300ccc9a24955da183cc85de0cd2df719b15defa3b8cdcc1d2b
+  ratified_content:
+    type: test
+    text: The preview 3MF has three objects named base, lid and model, the model's
+      transform equals the report's rotation and translation, and the lid sits wholly
+      above the base.
+    normative: false
+    derived: false
+    attrs: {}

@@ -1,6 +1,6 @@
 uid: TEST-0010
 type: test
-status: proposed
+status: ratified
 title: The footprint follows the model
 text: A bar 80 by 10 by 10 mm saved turned 30 degrees about Z is boxed with its long
   side parallel to a box side, and the outer footprint matches 80 and 10 plus the
@@ -11,3 +11,13 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:0108c3c8d51c141a05a4fb6a8455df3e42432d320d90a78c7761ff7a663a017e
+  ratified_content:
+    type: test
+    text: A bar 80 by 10 by 10 mm saved turned 30 degrees about Z is boxed with its
+      long side parallel to a box side, and the outer footprint matches 80 and 10
+      plus the walls and clearance within 1 mm.
+    normative: false
+    derived: false
+    attrs: {}

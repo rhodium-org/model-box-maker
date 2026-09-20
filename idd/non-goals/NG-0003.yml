@@ -1,6 +1,6 @@
 uid: NG-0003
 type: non_goal
-status: proposed
+status: ratified
 title: No undercut that holds the model in
 text: The cavity is never narrowed above the model to stop it moving. The model always
   lifts straight out of the base.
@@ -10,3 +10,12 @@ rationale: An undercut would need the model to be forced past it, which is the d
 normative: false
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:3e749a17b3fb448fc5f76a2efa91d4bdeb2f51ca390617d300e92bce8b9c1366
+  ratified_content:
+    type: non_goal
+    text: The cavity is never narrowed above the model to stop it moving. The model
+      always lifts straight out of the base.
+    normative: false
+    derived: false
+    attrs: {}

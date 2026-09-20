@@ -1,6 +1,6 @@
 uid: RISK-0001
 type: risk
-status: proposed
+status: ratified
 title: The lid crushes the model when the box is pressed
 text: A lid that can travel below the rim, or a cavity that leaves no space above
   the model, lets a squeeze in the post push the lid onto the model.
@@ -10,3 +10,12 @@ rationale: Parcels go through sorting machines and stacked sacks, and the lid is
 normative: true
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:4ec1564e54eb9324b15219a3d36850f8cd6b5ba8e57db4c58c73722b9d73df74
+  ratified_content:
+    type: risk
+    text: A lid that can travel below the rim, or a cavity that leaves no space above
+      the model, lets a squeeze in the post push the lid onto the model.
+    normative: true
+    derived: false
+    attrs: {}

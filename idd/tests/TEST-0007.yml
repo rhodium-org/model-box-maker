@@ -1,6 +1,6 @@
 uid: TEST-0007
 type: test
-status: proposed
+status: ratified
 title: A bowl is cradled mouth down
 text: A hemispherical shell fixture is placed with its rim lowest, and the cradle
   under it rises into a dome that fills the hollow to within the clearance.
@@ -10,3 +10,12 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:86b4e5dcba43bd4fcb572c48e38a89c70f2dd27e2d9202b84d3801fc5bb95a12
+  ratified_content:
+    type: test
+    text: A hemispherical shell fixture is placed with its rim lowest, and the cradle
+      under it rises into a dome that fills the hollow to within the clearance.
+    normative: false
+    derived: false
+    attrs: {}

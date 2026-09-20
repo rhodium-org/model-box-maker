@@ -1,6 +1,6 @@
 uid: REQ-0007
 type: requirement
-status: proposed
+status: ratified
 title: The box can be held under a size limit
 text: --max-outer A,B,C gives the largest closed box allowed, in millimetres, in
   any order. A candidate pose whose box exceeds the limit in every pairing of its
@@ -19,3 +19,15 @@ links:
 attrs:
   priority: should
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:64f32157692ab7c235fc22564ede13a14e600ce6fbc58617856018314c2abdc3
+  ratified_content:
+    type: requirement
+    text: --max-outer A,B,C gives the largest closed box allowed, in millimetres,
+      in any order. A candidate pose whose box exceeds the limit in every pairing
+      of its three sides to A, B and C is dropped before scoring. If no pose fits,
+      the tool exits 1 and names the smallest box any pose achieved.
+    normative: true
+    derived: false
+    attrs:
+      priority: should

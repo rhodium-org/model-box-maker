@@ -1,6 +1,6 @@
 uid: REQ-0006
 type: requirement
-status: proposed
+status: ratified
 title: A report explains the box
 text: Beside the geometry the tool writes <stem>-report.json. It records the input
   file and scale, the orientation mode, the rotation applied to the model as a 3
@@ -25,3 +25,19 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:3cb7ec46bfffb4b093f2eed265d6bec03ac3734eb2d00586a794f39f19807636
+  ratified_content:
+    type: requirement
+    text: Beside the geometry the tool writes <stem>-report.json. It records the
+      input file and scale, the orientation mode, the rotation applied to the model
+      as a 3 by 3 matrix and as X, Y, Z angles in degrees, the translation that places
+      the model at rest in the base, the outer size of the closed box, the outer
+      volume, the cavity volume, the free volume as a fraction of the cavity when
+      the mesh is watertight, every dimension option with the value used, and the
+      paths written. For an automatic orientation it also lists the ten best candidates
+      with their scores and says why the winner won.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

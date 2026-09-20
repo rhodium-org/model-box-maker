@@ -1,6 +1,6 @@
 uid: RISK-0003
 type: risk
-status: proposed
+status: ratified
 title: The cavity comes out smaller than the model
 text: The cavity is computed on a grid. Sampling can miss a thin feature or round
   a surface inward, so the model does not fit, or fits only when forced.
@@ -9,3 +9,12 @@ rationale: A box that does not fit its model is found out only after a long prin
 normative: true
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:71f66d021cc9f39d5fa585dcd4f30f08ec52dcd441f45174311722dc41a63f67
+  ratified_content:
+    type: risk
+    text: The cavity is computed on a grid. Sampling can miss a thin feature or round
+      a surface inward, so the model does not fit, or fits only when forced.
+    normative: true
+    derived: false
+    attrs: {}

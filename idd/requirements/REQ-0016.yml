@@ -1,6 +1,6 @@
 uid: REQ-0016
 type: requirement
-status: proposed
+status: ratified
 title: The base and the lid are written as two files, each the way up it prints
 text: The tool writes <stem>-base and <stem>-lid as STL by default, or 3MF with --format
   3mf, into the directory given by --out, default the current directory. The base
@@ -19,3 +19,16 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:c7cc9920ca08e8345ce3f87264e14899995fc9bf26691c090126e4ad8acc1406
+  ratified_content:
+    type: requirement
+    text: The tool writes <stem>-base and <stem>-lid as STL by default, or 3MF with
+      --format 3mf, into the directory given by --out, default the current directory.
+      The base is written with its opening up and its underside on Z zero. The lid
+      is written with its plate on Z zero and its skirt pointing up. Each file is
+      one closed, manifold body.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

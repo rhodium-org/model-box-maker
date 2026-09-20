@@ -1,6 +1,6 @@
 uid: REQ-0020
 type: requirement
-status: proposed
+status: ratified
 title: One command with plain exit codes
 text: The tool is run as model-box-maker MODEL [options]. --help lists every option
   with its default. On success it exits 0 and prints the files written and a one-line
@@ -17,3 +17,16 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:b2e5b26ee00b80b6380c49655dc19d0a46d68eec3ae18312f85d58c6a4e4cb2f
+  ratified_content:
+    type: requirement
+    text: The tool is run as model-box-maker MODEL [options]. --help lists every
+      option with its default. On success it exits 0 and prints the files written
+      and a one-line summary of the pose chosen and the box size. A usage error exits
+      2. Any other failure exits 1 with a single line saying what went wrong. It
+      never leaves a partial set of files.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

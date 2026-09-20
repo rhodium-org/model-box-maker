@@ -1,6 +1,6 @@
 uid: REQ-0004
 type: requirement
-status: proposed
+status: ratified
 title: The tool chooses the orientation that gives the smallest, snuggest box
 text: With --orientation auto, the default, the tool evaluates candidate poses of
   the model and keeps the best. The candidates are the model as saved, every face
@@ -27,3 +27,21 @@ links:
 attrs:
   priority: must
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:f7b65d5aef6df09ba49302f82622439dfda37c7c91a61c12d0f5f8f8ba71a751
+  ratified_content:
+    type: requirement
+    text: With --orientation auto, the default, the tool evaluates candidate poses
+      of the model and keeps the best. The candidates are the model as saved, every
+      face of the model's convex hull placed downward, and the poses that stand each
+      principal axis of the model vertical. Each candidate is turned about the vertical
+      so its box footprint is smallest. Each candidate is scored by the outer volume
+      of the box it would need and by its cavity volume, which is the empty space
+      between the cradle floor and the rim over the whole footprint of the cavity.
+      The pose with the smallest outer volume wins. Any pose whose outer volume is
+      within 5 percent of that smallest is a tie, and a tie goes to the smallest
+      cavity volume, then to the lowest box. The 5 percent is the option --size-tolerance.
+    normative: true
+    derived: false
+    attrs:
+      priority: must

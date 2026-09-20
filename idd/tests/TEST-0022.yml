@@ -1,6 +1,6 @@
 uid: TEST-0022
 type: test
-status: proposed
+status: ratified
 title: The lid lifts straight off
 text: The seated lid raised by 0.5 mm, 3 mm and the full lip height never intersects
   the base.
@@ -10,3 +10,12 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:3cf22f5abdabe675556a85664026540100fbe503415d0ef6697e7056174f6a46
+  ratified_content:
+    type: test
+    text: The seated lid raised by 0.5 mm, 3 mm and the full lip height never intersects
+      the base.
+    normative: false
+    derived: false
+    attrs: {}

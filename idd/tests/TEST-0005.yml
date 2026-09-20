@@ -1,6 +1,6 @@
 uid: TEST-0005
 type: test
-status: proposed
+status: ratified
 title: --help names every dimension and its default
 text: The help text contains each dimension option listed in REQ-0003 with its default
   value in millimetres.
@@ -10,3 +10,12 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:aa38386d7bc43f2af069f7c5c93fb7de2b49166a5e64f94ec86a2be8897cddd8
+  ratified_content:
+    type: test
+    text: The help text contains each dimension option listed in REQ-0003 with its
+      default value in millimetres.
+    normative: false
+    derived: false
+    attrs: {}

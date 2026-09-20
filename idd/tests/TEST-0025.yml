@@ -1,6 +1,6 @@
 uid: TEST-0025
 type: test
-status: proposed
+status: ratified
 title: Solid is the default
 text: A run without --walls gives a base byte-identical to --walls solid, and --walls
   hex gives a base of smaller volume.
@@ -10,3 +10,12 @@ links:
   type: verifies
 attrs:
   origin: ai
+  ratified_by: Henry Grech-Cini
+  ratified_fingerprint: sha256:2315e7042c1263ed76001e2e3bed808b23167ba466903dd28723e0f379eb0856
+  ratified_content:
+    type: test
+    text: A run without --walls gives a base byte-identical to --walls solid, and
+      --walls hex gives a base of smaller volume.
+    normative: false
+    derived: false
+    attrs: {}
