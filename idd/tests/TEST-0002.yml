@@ -1,6 +1,6 @@
 uid: TEST-0002
 type: test
-status: implemented
+status: verified
 title: A broken model is refused before anything is written
 text: An empty file, a file with a NaN vertex, and a set of coplanar triangles with
   zero height each make the tool exit 1 with one line naming the fault, and the output

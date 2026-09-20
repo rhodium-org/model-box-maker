@@ -13,11 +13,12 @@ model-box-maker figurine.stl -o out --preview
 Pure Python; every dependency ships binary wheels (numpy, scipy, trimesh,
 manifold3d, rtree, networkx, lxml). No CAD kernel or external program.
 
-**Status: implemented against the requirements graph in `idd/`.** All 66
-items are ratified; the 20 requirements, 2 NFRs and 32 tests are at
-`implemented`, apart from three tests whose tolerances were re-worded during
-implementation and await re-ratification (`tl -C idd check --strict` names
-them). `python -m pytest` runs the 32 tests.
+**Status: implemented and verified against the requirements graph in
+`idd/`.** All 66 items are ratified; the 20 requirements, 2 NFRs and 29 tests
+are at `verified` (the suite passes locally and in CI), and three tests whose
+tolerances were re-worded during implementation wait as `ratified-stale` for
+re-ratification (`tl -C idd check --strict` names them). `python -m pytest`
+runs the 32 tests.
 
 ## How the box is made
 
@@ -94,9 +95,9 @@ angles.
 - **File size.** The cradle is a triangulated heightmap, two triangles per
   cell, so a 100 × 100 mm footprint at 0.25 mm gives a base of several
   hundred thousand triangles. Slicers cope; `--pitch 0.5` quarters it.
-- **Speed.** A 200 000-triangle, 150 mm model takes about 40 s at the default
-  pitch on a desktop CPU (NFR-0001 asks for under a minute). Small models take
-  a second or two.
+- **Speed.** A 200 000-triangle, 150 mm model takes about 10 s at the default
+  pitch on an idle desktop CPU and about 40 s on a busy one (NFR-0001 asks for
+  under a minute). Small models take a second or two.
 
 ## The requirements graph
 

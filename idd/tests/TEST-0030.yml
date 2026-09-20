@@ -1,6 +1,6 @@
 uid: TEST-0030
 type: test
-status: implemented
+status: verified
 title: Exit codes and messages
 text: A good run exits 0 and prints the paths and a one-line pose summary. A missing
   model path exits 2 with usage. A refused model exits 1 with one line. After a failure

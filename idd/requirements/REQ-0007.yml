@@ -1,6 +1,6 @@
 uid: REQ-0007
 type: requirement
-status: implemented
+status: verified
 title: The box can be held under a size limit
 text: --max-outer A,B,C gives the largest closed box allowed, in millimetres, in
   any order. A candidate pose whose box exceeds the limit in every pairing of its

@@ -1,6 +1,6 @@
 uid: TEST-0022
 type: test
-status: implemented
+status: verified
 title: The lid lifts straight off
 text: The seated lid raised by 0.5 mm, 3 mm and the full lip height never intersects
   the base.

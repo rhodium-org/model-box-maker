@@ -1,6 +1,6 @@
 uid: TEST-0026
 type: test
-status: implemented
+status: verified
 title: Two closed bodies, each the way it prints
 text: Both files load as watertight manifold bodies with positive volume. The base's
   underside is on Z zero and its cavity is open at its top. The lid's plate is on

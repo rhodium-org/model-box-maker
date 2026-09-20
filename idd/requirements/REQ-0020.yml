@@ -1,6 +1,6 @@
 uid: REQ-0020
 type: requirement
-status: implemented
+status: verified
 title: One command with plain exit codes
 text: The tool is run as model-box-maker MODEL [options]. --help lists every option
   with its default. On success it exits 0 and prints the files written and a one-line

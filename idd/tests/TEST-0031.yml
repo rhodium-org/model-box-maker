@@ -1,6 +1,6 @@
 uid: TEST-0031
 type: test
-status: implemented
+status: verified
 title: 200 000 triangles within a minute
 text: A 200 000-triangle fixture 150 mm across at default options finishes within
   60 seconds on the test machine.

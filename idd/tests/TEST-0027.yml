@@ -1,6 +1,6 @@
 uid: TEST-0027
 type: test
-status: implemented
+status: verified
 title: No downward face steeper than 45 degrees off the bed
 text: For each body, every face whose normal points downward lies on Z zero or leans
   no more than 45 degrees from vertical, and in a lattice no bridge is longer than

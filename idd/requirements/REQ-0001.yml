@@ -1,6 +1,6 @@
 uid: REQ-0001
 type: requirement
-status: implemented
+status: verified
 title: Reads a model from a common mesh file
 text: The tool reads a model from an STL (binary or ASCII), OBJ, 3MF or PLY file.
   The file need not be watertight. A file that cannot be read, holds no triangles,

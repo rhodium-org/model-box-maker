@@ -1,6 +1,6 @@
 uid: REQ-0017
 type: requirement
-status: implemented
+status: verified
 title: Every output prints without support
 text: In the orientation written, no downward-facing face of either body leans more
   than 45 degrees from vertical unless it lies on the bed. In a lattice no unsupported

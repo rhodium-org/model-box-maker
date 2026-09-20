@@ -1,6 +1,6 @@
 uid: TEST-0021
 type: test
-status: implemented
+status: verified
 title: The lid seats on the rim and stops there
 text: The seated lid's plate underside is on the rim plane within 0.01 mm, its skirt
   inner face is the fit gap from the lip, its outer face is flush with the wall within

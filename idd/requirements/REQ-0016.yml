@@ -1,6 +1,6 @@
 uid: REQ-0016
 type: requirement
-status: implemented
+status: verified
 title: The base and the lid are written as two files, each the way up it prints
 text: The tool writes <stem>-base and <stem>-lid as STL by default, or 3MF with --format
   3mf, into the directory given by --out, default the current directory. The base

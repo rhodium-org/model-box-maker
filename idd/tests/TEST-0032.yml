@@ -1,6 +1,6 @@
 uid: TEST-0032
 type: test
-status: implemented
+status: verified
 title: Installs into a fresh environment
 text: pip install of the package into a clean virtual environment on Python 3.10
   completes using wheels only, and model-box-maker --help then runs.

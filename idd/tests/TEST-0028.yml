@@ -1,6 +1,6 @@
 uid: TEST-0028
 type: test
-status: implemented
+status: verified
 title: The preview holds base, lid and model
 text: The preview 3MF has three objects named base, lid and model, the model's transform
   equals the report's rotation and translation, and the lid sits wholly above the

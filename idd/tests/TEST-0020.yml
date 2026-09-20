@@ -1,6 +1,6 @@
 uid: TEST-0020
 type: test
-status: implemented
+status: verified
 title: The outside is a rounded cuboid
 text: The base's outer outline is a rectangle with corners rounded to the corner
   radius, sharp when the radius is zero, and the base underside and the lid top are

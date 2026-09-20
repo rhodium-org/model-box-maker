@@ -1,6 +1,6 @@
 uid: REQ-0012
 type: requirement
-status: implemented
+status: verified
 title: The outside is a cuboid with rounded vertical edges
 text: The closed box is a cuboid. Its vertical edges are rounded to the corner radius,
   which may be zero. The top of the lid and the underside of the base are flat.
