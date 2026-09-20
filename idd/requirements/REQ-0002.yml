@@ -1,0 +1,20 @@
+uid: REQ-0002
+type: requirement
+status: proposed
+title: Model units and scale
+text: The model is read as millimetres. The option --scale multiplies every coordinate
+  before anything else happens, so a file authored in inches is handled with --scale
+  25.4. When the scaled model is under 5 mm or over 300 mm in its longest direction
+  the tool warns on stderr that the units may be wrong and carries on.
+rationale: A wrong unit is the most common way to get a useless box, and the file
+  cannot say which unit it meant. A warning rather than a refusal keeps genuinely
+  tiny or large models possible.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+- target: ASM-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

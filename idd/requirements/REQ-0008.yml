@@ -1,0 +1,25 @@
+uid: REQ-0008
+type: requirement
+status: proposed
+title: The cavity is the model's drop path, grown by the clearance
+text: The model in its chosen pose is grown outward by the clearance in every direction.
+  The cavity is every point that grown model passes through when it is lifted straight
+  up out of the box, from its rest position to above the rim. So the cavity walls
+  are vertical, the floor follows the underside of the grown model, and every part
+  of the model has box material below it at the clearance distance.
+rationale: This is the operator's description of the algorithm, taking the model
+  away from a solid block as it drops in. Sweeping the grown model upward is the
+  exact form of it. Because the walls are vertical and the floor is the model's own
+  underside, the model goes in and comes out without touching, and once in, its whole
+  underside is carried and it cannot move further than the clearance in any direction.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+- target: RISK-0002
+  type: mitigates
+- target: RISK-0005
+  type: mitigates
+attrs:
+  priority: must
+  origin: ai

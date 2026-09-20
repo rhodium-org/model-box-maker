@@ -1,0 +1,12 @@
+uid: TEST-0017
+type: test
+status: proposed
+title: A coarser grid never cuts inward
+text: 'The base computed at 1.0 mm pitch lies within the base computed at 0.25 mm
+  pitch: every sampled point on the coarse base is inside or on the fine base.'
+normative: false
+links:
+- target: REQ-0009
+  type: verifies
+attrs:
+  origin: ai

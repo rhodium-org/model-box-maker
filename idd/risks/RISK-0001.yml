@@ -1,0 +1,12 @@
+uid: RISK-0001
+type: risk
+status: proposed
+title: The lid crushes the model when the box is pressed
+text: A lid that can travel below the rim, or a cavity that leaves no space above
+  the model, lets a squeeze in the post push the lid onto the model.
+rationale: Parcels go through sorting machines and stacked sacks, and the lid is
+  the face that gets pressed. A lid with no hinge has nothing but its seat to stop
+  it.
+normative: true
+attrs:
+  origin: ai

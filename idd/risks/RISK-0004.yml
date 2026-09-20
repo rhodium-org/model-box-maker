@@ -1,0 +1,13 @@
+uid: RISK-0004
+type: risk
+status: proposed
+title: A poor orientation gives a weak or wasteful box
+text: The same model dropped in a different orientation gives a different box. A
+  bad choice leaves large empty space under overhanging parts, a tall thin box that
+  tips, or thin features standing up with nothing beside them.
+rationale: The operator named orientation as the hardest part. Taking the file as
+  saved makes the result depend on how the model was authored, not on how it should
+  be carried.
+normative: true
+attrs:
+  origin: ai

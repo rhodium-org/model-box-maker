@@ -1,0 +1,12 @@
+uid: TEST-0029
+type: test
+status: proposed
+title: A re-run is byte-identical
+text: Two runs on the same model with the same options produce identical hashes for
+  every file written.
+normative: false
+links:
+- target: REQ-0019
+  type: verifies
+attrs:
+  origin: ai

@@ -1,0 +1,17 @@
+uid: REQ-0010
+type: requirement
+status: proposed
+title: The floor under the model is solid and never thinner than the floor thickness
+text: The base is solid from its underside up to the cradle surface at every point
+  of the footprint. The lowest point of the cradle sits exactly the floor thickness
+  above the underside of the base.
+rationale: The floor takes every downward knock. Making the base solid up to the
+  cradle, rather than a shell with a separate floor, means there is no pocket under
+  the model for the floor to collapse into.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

@@ -1,0 +1,12 @@
+uid: TEST-0016
+type: test
+status: proposed
+title: A thin fin keeps its slot
+text: A block with a 0.6 mm fin hanging below it is boxed at pitches of 0.25, 0.5
+  and 1.0 mm, and the clearance check of the drop path passes at every pitch.
+normative: false
+links:
+- target: REQ-0009
+  type: verifies
+attrs:
+  origin: ai

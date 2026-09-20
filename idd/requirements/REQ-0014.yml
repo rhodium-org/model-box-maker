@@ -1,0 +1,20 @@
+uid: REQ-0014
+type: requirement
+status: proposed
+title: The seated lid never reaches the model
+text: The rim stands at least the top space above the highest point of the model
+  in its rest pose. Below the rim plane the lid has only its skirt, and the skirt
+  lies wholly outside the base wall. So no part of the seated lid, and no part of
+  the lid on its way down, enters the cavity.
+rationale: The lid is the part a person presses and the part that gets pressed in
+  the post. Keeping the whole lid above the rim, except a skirt that lands on the
+  wall, is what makes the lid unable to harm the model however hard it is pushed.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+- target: RISK-0001
+  type: mitigates
+attrs:
+  priority: must
+  origin: ai

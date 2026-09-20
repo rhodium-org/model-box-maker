@@ -1,0 +1,94 @@
+[project]
+name = "model-box-maker"
+format_version = 3
+
+# Root item types may exist ungrounded; everything else must reach a root
+# through a grounding link (the scope-avalanche grounding layer). A non_goal is
+# a root but NOT a delivery root: it is negative space, so nothing derives from
+# it and it is never flagged 'unserved'.
+[grounding]
+root_types = ["intent", "business_need", "risk", "constraint", "assumption", "non_goal"]
+delivery_roots = ["intent", "business_need", "risk", "constraint"]
+ground_link_types = ["derives_from", "mitigates", "implements", "verifies"]
+ai_origins = ["ai", "hybrid"]
+
+# `normative = false` on a type means its items are not binding statements:
+# they feed no ratification drift of their own and need reach no published
+# document. An intent is the why, a non_goal is excluded scope, a test verifies
+# rather than binds. Absent, a type is normative.
+[types.intent]
+normative = false
+
+[types.requirement]
+attrs.priority = { type = "enum", values = ["must", "should", "could"], normative = true }
+attrs.origin   = { type = "enum", values = ["human", "ai", "hybrid"] }
+
+[types.nfr]
+attrs.origin = { type = "enum", values = ["human", "ai", "hybrid"] }
+
+[types.test]
+normative = false
+
+# A non_goal records deliberately-excluded scope — the object a human points at
+# to reject a category of proposed work. Passive by design: throughline surfaces
+# non_goals in `tl context` but never tries to detect items that 'violate' one.
+[types.non_goal]
+normative = false
+attrs.origin = { type = "enum", values = ["human", "ai", "hybrid"] }
+
+[links]
+types = ["refines", "verifies", "satisfies", "implements", "relates",
+         "derives_from", "mitigates", "assumes"]
+
+# Type-level link constraints (SR-0084): the item types each link may join.
+# Domain-specific, so left off by default — run `tl shape` to see how your
+# graph is actually wired, then declare rules to lock that shape in, e.g.:
+# [link_rules]
+# mitigates = { from = ["requirement"], to = ["risk"] }
+# verifies  = { from = ["test"], to = ["requirement"] }
+
+[status]
+# draft = actively moving toward approval; deferred = acknowledged and grounded
+# but deliberately parked (a backlog wish-list item, not on the active front).
+values = ["proposed", "draft", "deferred", "approved", "ratified", "implemented",
+          "verified", "suspect", "rejected", "deleted"]
+
+# Semantic status roles (SR-0131): which declared status plays each role the
+# tool's operations act on — `tl new` births at 'initial', `tl ratify` writes
+# 'ratified', `tl invalidate` writes 'invalidated' and reads 'invalidated' +
+# 'tombstone' as dead, `tl delete` writes 'tombstone'. Operations resolve status
+# through these roles, never a literal, so a project renames a status freely by
+# editing here. Delete this table only if you drive every status move by hand.
+[status.roles]
+initial = "draft"
+proposed = "proposed"
+ratified = "ratified"
+invalidated = "rejected"
+suspect = "suspect"
+tombstone = "deleted"
+
+# Allowed status moves (SR-0083). `tl check` compares each item against its
+# status in the previous commit and flags any change these do not permit. Delete
+# this table to leave every status freely reachable.
+# Every live status keeps a route to 'ratified' (SR-0150) — in particular the two
+# statuses below 'proposed' can move back to it, so scope that was authored or
+# parked without ratification can still be put forward for a human to accept.
+# Every live status also keeps a route to 'suspect' (SR-0175), so that an item
+# whose grounding is withdrawn can be flagged wherever it currently sits — the
+# statuses below 'approved' hold the items whose grounding is least settled.
+[transitions]
+proposed    = ["draft", "approved", "ratified", "deferred", "suspect", "rejected", "deleted"]
+draft       = ["proposed", "approved", "deferred", "suspect", "rejected", "deleted"]
+deferred    = ["proposed", "draft", "approved", "suspect", "rejected", "deleted"]
+approved    = ["ratified", "implemented", "deferred", "suspect", "rejected", "deleted"]
+ratified    = ["implemented", "suspect", "rejected", "deleted"]
+implemented = ["verified", "suspect", "rejected", "deleted"]
+verified    = ["implemented", "suspect", "deleted"]
+suspect     = ["approved", "ratified", "implemented", "verified", "rejected", "deleted"]
+rejected    = ["draft", "deleted"]
+
+# Coverage: every live requirement should be verified by a test.
+[[rules.coverage]]
+filter = "type == 'requirement' and status != 'deleted'"
+needs = "incoming:verifies"
+severity = "warning"

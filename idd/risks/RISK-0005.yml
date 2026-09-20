@@ -1,0 +1,12 @@
+uid: RISK-0005
+type: risk
+status: proposed
+title: The model rattles inside its clearance
+text: Clearance protects the model from flex but lets it move. A model that moves
+  freely strikes the cradle on every knock.
+rationale: This risk and RISK-0002 pull in opposite directions. A small clearance,
+  a floor that follows the model's underside, and a report of the free space are
+  how the tool balances them. Any soft padding stays the operator's choice.
+normative: true
+attrs:
+  origin: ai

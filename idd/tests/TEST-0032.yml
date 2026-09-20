@@ -1,0 +1,12 @@
+uid: TEST-0032
+type: test
+status: proposed
+title: Installs into a fresh environment
+text: pip install of the package into a clean virtual environment on Python 3.10
+  completes using wheels only, and model-box-maker --help then runs.
+normative: false
+links:
+- target: NFR-0002
+  type: verifies
+attrs:
+  origin: ai

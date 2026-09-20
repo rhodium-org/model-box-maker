@@ -1,0 +1,13 @@
+uid: INT-0001
+type: intent
+status: proposed
+title: A printed box that carries one model safely through the post
+text: The tool takes a 3D model file and writes a printable two-part box for it.
+  The model drops into the base from above, a lid closes over a lip, and the pair
+  protects the model in the post. The output is ready to slice without hand editing.
+rationale: Posting a printed model in a found box means padding it by hand each time
+  and hoping. A box shaped to the model is repeatable and can be regenerated when
+  the model changes. The tool exists so that step is one command.
+normative: false
+attrs:
+  origin: ai

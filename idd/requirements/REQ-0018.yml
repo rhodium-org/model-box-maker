@@ -1,0 +1,18 @@
+uid: REQ-0018
+type: requirement
+status: proposed
+title: A preview shows the model sitting in its box
+text: With --preview the tool also writes <stem>-preview.3mf holding three named
+  objects, the base, the lid lifted clear above it, and the model in its rest pose,
+  so the fit can be looked at in a slicer or viewer before printing.
+rationale: The orientation and the clearance are easier to judge by eye than from
+  numbers. A 3MF keeps the three parts as separate named objects, which an STL cannot.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+- target: RISK-0004
+  type: mitigates
+attrs:
+  priority: should
+  origin: ai

@@ -1,0 +1,12 @@
+uid: TEST-0013
+type: test
+status: proposed
+title: A size limit changes the choice or fails plainly
+text: A tall plate under a limit that only its flat pose meets is laid flat. A limit
+  no pose meets exits 1 and the message names the smallest box achieved.
+normative: false
+links:
+- target: REQ-0007
+  type: verifies
+attrs:
+  origin: ai

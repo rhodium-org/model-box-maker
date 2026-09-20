@@ -1,0 +1,19 @@
+uid: REQ-0001
+type: requirement
+status: proposed
+title: Reads a model from a common mesh file
+text: The tool reads a model from an STL (binary or ASCII), OBJ, 3MF or PLY file.
+  The file need not be watertight. A file that cannot be read, holds no triangles,
+  has a non-finite vertex, or has zero extent in any direction is refused with a
+  one-line message naming the fault, and nothing is written.
+rationale: STL is what slicers and model sites exchange; the other three cost nothing
+  extra to accept through the same loader. The cradle is computed from the lowest
+  surface under each grid cell, which works on a triangle soup, so demanding a watertight
+  mesh would refuse many real downloads for no gain.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

@@ -1,0 +1,12 @@
+uid: ASM-0001
+type: assumption
+status: proposed
+title: Model files are in millimetres
+text: A model file is read as millimetres unless a scale is given. STL carries no
+  unit, so a file authored in inches or metres would otherwise give a box wrong by
+  a large factor.
+rationale: Every slicer and modelling tool the operator uses defaults to millimetres.
+  An explicit scale option covers the exception without the tool guessing.
+normative: true
+attrs:
+  origin: ai

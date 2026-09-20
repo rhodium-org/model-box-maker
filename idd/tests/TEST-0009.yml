@@ -1,0 +1,12 @@
+uid: TEST-0009
+type: test
+status: proposed
+title: A plate lies flat
+text: A 100 by 100 by 3 mm plate saved standing on edge is laid flat, and the closed
+  box is under 15 mm tall.
+normative: false
+links:
+- target: REQ-0004
+  type: verifies
+attrs:
+  origin: ai

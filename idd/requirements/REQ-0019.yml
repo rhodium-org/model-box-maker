@@ -1,0 +1,17 @@
+uid: REQ-0019
+type: requirement
+status: proposed
+title: The same input and options give the same files
+text: Running the tool twice on the same model with the same options writes byte-identical
+  files, the report included. Candidate ordering, tie-breaking and mesh output are
+  deterministic and no output carries a timestamp.
+rationale: A box is regenerated when the model changes, and a diff that shows only
+  real change is how that stays reviewable. Determinism also makes every test in
+  this graph repeatable.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

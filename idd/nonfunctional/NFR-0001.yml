@@ -1,0 +1,16 @@
+uid: NFR-0001
+type: nfr
+status: proposed
+title: A typical model is boxed within a minute
+text: A model of up to 200 000 triangles and up to 150 mm across, at the default
+  options, finishes within 60 seconds on the machine that runs the test suite.
+rationale: The automatic orientation evaluates many candidate poses, each needing
+  a cradle heightmap. Screening candidates at a coarse pitch and computing only the
+  winner at the full pitch keeps the search inside this bound. The bound exists so
+  the search cannot grow into something nobody waits for.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  origin: ai

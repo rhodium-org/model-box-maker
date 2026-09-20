@@ -1,0 +1,22 @@
+uid: REQ-0003
+type: requirement
+status: proposed
+title: Every dimension that shapes the box is an option with a stated default
+text: Each of these is a command-line option in millimetres with its default shown
+  in --help. Clearance around the model 1.0. Wall thickness 2.4. Floor thickness
+  under the lowest point of the cradle 3.0. Top space between the highest point of
+  the model and the lid 2.0. Lip height 6.0. Lid plate thickness 2.0. Lid skirt thickness
+  1.6. Fit gap between skirt and lip 0.2. Radius of the vertical outer edges 3.0.
+  Grid pitch 0.25. A zero or negative value, or a wall or skirt under two nozzle
+  lines (0.8 mm), is refused with exit code 2 before any geometry is computed.
+rationale: These are the numbers a person changes when a printer, a filament or a
+  model behaves differently. The defaults suit PLA on a 0.4 mm nozzle for models
+  a few centimetres across. Refusing a bad value first means a wrong flag fails in
+  a second, not after a minute of computation.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

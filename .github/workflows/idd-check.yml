@@ -1,0 +1,24 @@
+# Gate: the requirements graph must be structurally sound on every push.
+# Non-strict on purpose — every item is AI-authored and waits at `proposed`
+# for a human to ratify, which `--strict` would report as red. Structural
+# faults (ungrounded items, bad links, illegal status moves) still fail here.
+name: idd-check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install throughline (version floor, always upgraded)
+        run: python -m pip install --upgrade "throughline>=3.11.3"
+      - run: tl --version
+      - run: tl -C idd check

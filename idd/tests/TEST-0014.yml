@@ -1,0 +1,13 @@
+uid: TEST-0014
+type: test
+status: proposed
+title: The clearance holds everywhere
+text: Two thousand random points on the input surface, moved to the rest pose, each
+  lie at least the clearance less one grid pitch from the nearest point of the base
+  body.
+normative: false
+links:
+- target: REQ-0008
+  type: verifies
+attrs:
+  origin: ai

@@ -1,0 +1,13 @@
+uid: TEST-0012
+type: test
+status: proposed
+title: The report is complete and matches the geometry
+text: The report parses as JSON with every field named in REQ-0006. Applying its
+  rotation and translation to the input places every vertex inside the cavity outline
+  and at least the clearance above the cradle, less one grid pitch.
+normative: false
+links:
+- target: REQ-0006
+  type: verifies
+attrs:
+  origin: ai

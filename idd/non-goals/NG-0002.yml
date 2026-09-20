@@ -1,0 +1,12 @@
+uid: NG-0002
+type: non_goal
+status: proposed
+title: Not a general packaging designer
+text: One model per box. The tool does not nest several models, does not shape the
+  outside of the box to the model, does not generate foam or card inserts, does not
+  slice, and does not look up postage rates or size bands.
+rationale: A cuboid outside stacks, wraps and takes a label. Each excluded feature
+  is a different tool and none of them makes the one model safer.
+normative: false
+attrs:
+  origin: ai

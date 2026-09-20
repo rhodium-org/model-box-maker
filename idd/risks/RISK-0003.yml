@@ -1,0 +1,11 @@
+uid: RISK-0003
+type: risk
+status: proposed
+title: The cavity comes out smaller than the model
+text: The cavity is computed on a grid. Sampling can miss a thin feature or round
+  a surface inward, so the model does not fit, or fits only when forced.
+rationale: A box that does not fit its model is found out only after a long print.
+  Every rounding step has to go outward.
+normative: true
+attrs:
+  origin: ai

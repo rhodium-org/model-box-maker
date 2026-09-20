@@ -1,0 +1,13 @@
+uid: TEST-0008
+type: test
+status: proposed
+title: Automatic beats every axis-aligned pose
+text: For a bowl, a wedge, a T bracket and a mushroom, the winning pose's outer volume
+  is no larger than that of each of the 24 axis-aligned poses, or is within the size
+  tolerance of it with a cavity volume no larger.
+normative: false
+links:
+- target: REQ-0004
+  type: verifies
+attrs:
+  origin: ai

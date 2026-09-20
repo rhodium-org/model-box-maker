@@ -1,0 +1,12 @@
+uid: NG-0003
+type: non_goal
+status: proposed
+title: No undercut that holds the model in
+text: The cavity is never narrowed above the model to stop it moving. The model always
+  lifts straight out of the base.
+rationale: An undercut would need the model to be forced past it, which is the damage
+  the box exists to prevent. Movement is limited by the cradle shape and the clearance,
+  not by gripping.
+normative: false
+attrs:
+  origin: ai

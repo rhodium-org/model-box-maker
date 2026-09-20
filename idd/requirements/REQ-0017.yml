@@ -1,0 +1,18 @@
+uid: REQ-0017
+type: requirement
+status: proposed
+title: Every output prints without support
+text: In the orientation written, no downward-facing face of either body leans more
+  than 45 degrees from vertical unless it lies on the bed. In a lattice no unsupported
+  span is longer than 5 mm. The tool checks both before writing and refuses, naming
+  the face, rather than write a body that needs support.
+rationale: The cradle is a heightmap and the walls and skirt are vertical, so the
+  geometry has no overhangs by construction. The check exists so a later change to
+  the lip, the lattice or the edge rounding cannot quietly bring one back.
+normative: true
+links:
+- target: CON-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

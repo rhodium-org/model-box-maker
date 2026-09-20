@@ -1,0 +1,12 @@
+uid: TEST-0003
+type: test
+status: proposed
+title: Scale is applied before everything else
+text: A cube saved as 1 unit across, run with --scale 25.4, gives a cavity 25.4 mm
+  plus twice the clearance wide, within one grid pitch.
+normative: false
+links:
+- target: REQ-0002
+  type: verifies
+attrs:
+  origin: ai

@@ -1,0 +1,21 @@
+uid: REQ-0007
+type: requirement
+status: proposed
+title: The box can be held under a size limit
+text: --max-outer A,B,C gives the largest closed box allowed, in millimetres, in
+  any order. A candidate pose whose box exceeds the limit in every pairing of its
+  three sides to A, B and C is dropped before scoring. If no pose fits, the tool
+  exits 1 and names the smallest box any pose achieved.
+rationale: Postal size bands and printer beds are hard limits, and a large-letter
+  band is worth far more than a small saving in volume. Checking every pairing of
+  sides means the box may be laid on the bed or in the envelope whichever way round
+  fits.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+- target: RISK-0004
+  type: mitigates
+attrs:
+  priority: should
+  origin: ai

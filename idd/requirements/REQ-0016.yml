@@ -1,0 +1,21 @@
+uid: REQ-0016
+type: requirement
+status: proposed
+title: The base and the lid are written as two files, each the way up it prints
+text: The tool writes <stem>-base and <stem>-lid as STL by default, or 3MF with --format
+  3mf, into the directory given by --out, default the current directory. The base
+  is written with its opening up and its underside on Z zero. The lid is written
+  with its plate on Z zero and its skirt pointing up. Each file is one closed, manifold
+  body.
+rationale: Two files means each part can be printed alone or arranged on the bed
+  by the slicer. Writing each part already the way it prints removes the one manual
+  step that is easy to get wrong, and a closed body is what every slicer expects.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+- target: CON-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

@@ -1,0 +1,25 @@
+uid: REQ-0013
+type: requirement
+status: proposed
+title: The lid closes over a lip and stops on the rim
+text: The top of the base wall, over the lip height, is stepped in on the outside
+  by the skirt thickness plus the fit gap to form the lip. The lid is a flat plate
+  with a skirt that slides down over the lip. When seated the plate rests on the
+  rim of the base, the skirt outer face is flush with the wall below the lip, and
+  the skirt inner face stands the fit gap from the lip. The lid cannot travel lower
+  than the rim. Nothing holds the lid on but the fit.
+rationale: A cap over a lip is the strongest hinge-free closure a printer makes without
+  support. The rim is a solid stop over the whole wall, so a load on the lid goes
+  into the walls and never into the cavity. A skirt on the outside, rather than a
+  plug inside, keeps every part of the lid out of the cavity. The step is cut from
+  extra wall added below the lip, so the wall is never thinner than the wall thickness
+  at the lip. Tape holds the lid for posting, as NG-0001 records.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+- target: RISK-0001
+  type: mitigates
+attrs:
+  priority: must
+  origin: ai

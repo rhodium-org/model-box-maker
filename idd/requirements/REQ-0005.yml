@@ -1,0 +1,20 @@
+uid: REQ-0005
+type: requirement
+status: proposed
+title: The orientation can be fixed by hand
+text: --orientation keep uses the model as saved, with the file's Z axis up. --orientation
+  RX,RY,RZ rotates the model by those angles in degrees about the X, Y and Z axes
+  in that order and uses that pose. In both cases the pose is used exactly as given,
+  with no further turn about the vertical. The report records which orientation mode
+  was used.
+rationale: The automatic choice is a scoring rule and will sometimes pick a pose
+  the operator can see is wrong for a model, for example one with a fragile top that
+  should face up. A fixed orientation makes the tool a plain box generator for that
+  model.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+attrs:
+  priority: must
+  origin: ai

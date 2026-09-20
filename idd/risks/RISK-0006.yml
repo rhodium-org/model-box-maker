@@ -1,0 +1,12 @@
+uid: RISK-0006
+type: risk
+status: proposed
+title: Open walls weaken the box or let things through
+text: A wall cut into a lattice loses stiffness where the holes are and lets a sharp
+  object reach the model. Holes near a corner, the lip or the floor take the material
+  that carries the load.
+rationale: The operator allowed mesh walls to save material and print time. The saving
+  must not come out of the parts of the wall that do the protecting.
+normative: true
+attrs:
+  origin: ai

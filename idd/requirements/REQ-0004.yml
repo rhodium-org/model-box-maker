@@ -1,0 +1,29 @@
+uid: REQ-0004
+type: requirement
+status: proposed
+title: The tool chooses the orientation that gives the smallest, snuggest box
+text: With --orientation auto, the default, the tool evaluates candidate poses of
+  the model and keeps the best. The candidates are the model as saved, every face
+  of the model's convex hull placed downward, and the poses that stand each principal
+  axis of the model vertical. Each candidate is turned about the vertical so its
+  box footprint is smallest. Each candidate is scored by the outer volume of the
+  box it would need and by its cavity volume, which is the empty space between the
+  cradle floor and the rim over the whole footprint of the cavity. The pose with
+  the smallest outer volume wins. Any pose whose outer volume is within 5 percent
+  of that smallest is a tie, and a tie goes to the smallest cavity volume, then to
+  the lowest box. The 5 percent is the option --size-tolerance.
+rationale: |-
+  Outer volume is what the post and the printer charge for. Cavity volume is the empty space around the model, because the model's own volume is the same in every pose, and it comes straight from the cradle heightmap without a watertight mesh. Minimising it puts hollows and overhangs downward where the floor fills them, so a bowl goes in mouth down over a dome and a mushroom goes stem down into a well.
+
+  Cavity volume alone would stand a flat plate on edge, since the clearance layers cost less over a small footprint, so outer volume leads and cavity volume only breaks near ties. The 5 percent band is a judgement, which is why it is an option.
+
+  The faces of the convex hull are the poses a rigid object can rest in, so that set is small and holds the sensible answers. The saved pose is always a candidate so the automatic choice is never worse than the file. The principal axes are cheap extra candidates for models whose hull has no flat face.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+- target: RISK-0004
+  type: mitigates
+attrs:
+  priority: must
+  origin: ai

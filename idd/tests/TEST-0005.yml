@@ -1,0 +1,12 @@
+uid: TEST-0005
+type: test
+status: proposed
+title: --help names every dimension and its default
+text: The help text contains each dimension option listed in REQ-0003 with its default
+  value in millimetres.
+normative: false
+links:
+- target: REQ-0003
+  type: verifies
+attrs:
+  origin: ai

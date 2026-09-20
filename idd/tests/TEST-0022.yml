@@ -1,0 +1,12 @@
+uid: TEST-0022
+type: test
+status: proposed
+title: The lid lifts straight off
+text: The seated lid raised by 0.5 mm, 3 mm and the full lip height never intersects
+  the base.
+normative: false
+links:
+- target: REQ-0013
+  type: verifies
+attrs:
+  origin: ai

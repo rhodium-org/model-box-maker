@@ -1,0 +1,14 @@
+uid: CON-0001
+type: constraint
+status: proposed
+title: Parts print on a desktop FDM printer without support
+text: Every output body prints on an ordinary desktop FDM printer, in the orientation
+  it is written, with no support material. Walls, floors and skirts are sized in
+  whole 0.4 mm nozzle lines.
+rationale: The operator's printer is a desktop FDM machine. Support inside the cavity
+  is hard to remove and scars the cradle surface the model rests on. Sizing in nozzle
+  lines means the slicer prints what the file says instead of rounding a wall to
+  fewer perimeters.
+normative: true
+attrs:
+  origin: ai

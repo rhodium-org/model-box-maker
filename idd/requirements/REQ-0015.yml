@@ -1,0 +1,22 @@
+uid: REQ-0015
+type: requirement
+status: proposed
+title: Walls can be opened into a lattice
+text: --walls takes solid, hex or diamond, and defaults to solid. With a pattern,
+  each of the four wall panels is cut through with that lattice. No hole is wider
+  than --max-hole, default 6 mm. Solid material stays at every vertical edge, over
+  the whole lip and the wall for the band height below it, and from the underside
+  of the base up to the highest point of the cradle plus the band height. The band
+  height is the option --band, default 4 mm. Every hole prints without support.
+rationale: The operator allowed mesh walls to save filament and time. The bands are
+  where crush loads travel, so the lattice stays out of them. Solid is the default
+  because a solid box is the safer one and the pattern is a saving the operator chooses.
+normative: true
+links:
+- target: INT-0001
+  type: derives_from
+- target: RISK-0006
+  type: mitigates
+attrs:
+  priority: could
+  origin: ai
