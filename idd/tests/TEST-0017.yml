@@ -1,6 +1,6 @@
 uid: TEST-0017
 type: test
-status: implemented
+status: verified
 title: A coarser grid never cuts inward
 text: The cavity computed at 1.0 mm pitch contains the cavity computed at 0.25 mm
   pitch. The coarse outline contains the fine outline, and over every cell the model
