@@ -13,12 +13,13 @@ links:
 attrs:
   origin: ai
   ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:6c74dcdfbe268b0f0badff17c84eebb21d901820a117319359404026033e9ae1
+  ratified_fingerprint: sha256:8c03d2fd90154f93755d928f398b0bc8e3b91757c5ea2444de59798ade059c26
   ratified_content:
     type: test
-    text: A block with a tall post at one end, boxed with --walls hex, has holes
-      in the wall beside the low part and none beside the post, and every hole is
-      cut inward along the wall's normal.
+    text: A post that reaches the floor with an arm reaching out from its top, boxed
+      with --walls hex, has holes in the wall beside the post, where the cradle is
+      low, and none beside the arm, where the cradle rises to carry it; every hole
+      is cut inward along the wall's normal.
     normative: false
     derived: false
     attrs: {}
