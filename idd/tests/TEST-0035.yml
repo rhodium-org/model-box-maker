@@ -1,6 +1,6 @@
 uid: TEST-0035
 type: test
-status: implemented
+status: verified
 title: A raised cradle on one side does not stop holes elsewhere
 text: A post that reaches the floor with an arm reaching out from its top, boxed
   with --walls hex, has holes in the wall beside the post, where the cradle is low,
