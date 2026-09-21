@@ -1,0 +1,171 @@
+{
+  "name": "model-box-maker",
+  "label": "model-box-maker: a printable two-part postal box shaped to one 3D model, specified on a graph the person signed before any code, built to it in a day, then cut back on the same graph",
+  "recorded_at": "2026-09-21T05:25:27+00:00",
+  "graph_root": "/home/henry/Projects/03-scripts/model-box-maker/idd",
+  "repository": "/home/henry/Projects/03-scripts/model-box-maker",
+  "graph": {
+    "items_local": 71,
+    "items_live": 71,
+    "items_accepted": 71,
+    "acceptance_ratio": 1.0,
+    "by_type": {
+      "assumption": 1,
+      "constraint": 1,
+      "intent": 1,
+      "nfr": 2,
+      "non_goal": 3,
+      "requirement": 21,
+      "risk": 7,
+      "test": 35
+    },
+    "by_status": {
+      "ratified": 13,
+      "verified": 58
+    },
+    "by_origin": {
+      "ai": 71
+    },
+    "ratified_by": {
+      "Henry Grech-Cini": 71
+    },
+    "normative": 32,
+    "tests_by_method": {
+      "unset": 35
+    },
+    "sources_composed": {},
+    "citations_by_source": {},
+    "citations": 0,
+    "citations_stamped": 0,
+    "citations_unstamped": 0,
+    "local_links": 72
+  },
+  "git": {
+    "scope": "repository",
+    "commits": 19,
+    "first_commit": "2026-09-20T08:10:42+01:00",
+    "last_commit": "2026-09-21T06:25:21+01:00",
+    "span_days": 0.93,
+    "authors": {
+      "Henry Grech-Cini": 19
+    },
+    "commits_citing_an_item": 9,
+    "citing_ratio": 0.474,
+    "tags": [],
+    "editions": 0,
+    "lines_added": 5962,
+    "lines_removed": 559,
+    "items_ratified": 71,
+    "items_amended_after_ratification": 13,
+    "amending_commits": 24
+  },
+  "docs": {
+    "documents": {},
+    "words": 0,
+    "docs_check_ok": true,
+    "docs_check": []
+  },
+  "tests": {
+    "test_files": 4,
+    "pattern": "tests/test_*.py",
+    "passed": 43,
+    "failed": 0
+  },
+  "sessions": {
+    "sessions": [
+      {
+        "file": "/tmp/claude-1000/-home-henry-Projects/ffa67dea-1efe-4b2c-b9d2-53186286a178/scratchpad/session-box-work.jsonl",
+        "session_id": "ffa67dea-1efe-4b2c-b9d2-53186286a178",
+        "cwd": "/home/henry/Projects",
+        "first": "2026-09-20T06:52:06.374000+00:00",
+        "last": "2026-09-20T10:30:54.544000+00:00",
+        "wall_clock_hours": 3.65,
+        "active_hours": 2.41,
+        "idle_gap_minutes": 10.0,
+        "since": null,
+        "until": null,
+        "user_turns": 9,
+        "assistant_turns": 245,
+        "tool_results": 118,
+        "tool_calls": 118,
+        "tool_calls_by_name": {
+          "Bash": 77,
+          "Write": 25,
+          "Read": 4,
+          "mcp__hitl__hitl_ask": 3,
+          "SendUserFile": 3,
+          "mcp__terminal__read_terminal": 3,
+          "Skill": 1,
+          "ToolSearch": 1,
+          "ListAgents": 1
+        },
+        "api_calls": 245,
+        "models": {
+          "claude-fable-5-1": 245
+        },
+        "compactions": 0,
+        "tokens": {
+          "input_tokens": 6972,
+          "output_tokens": 2195666,
+          "cache_creation_input_tokens": 1881255,
+          "cache_read_input_tokens": 99969709,
+          "thinking_tokens": 1213442
+        }
+      }
+    ],
+    "count": 1,
+    "totals": {
+      "wall_clock_hours": 3.65,
+      "active_hours": 2.41,
+      "user_turns": 9,
+      "assistant_turns": 245,
+      "tool_calls": 118,
+      "api_calls": 245,
+      "compactions": 0,
+      "tokens_input_tokens": 6972,
+      "tokens_output_tokens": 2195666,
+      "tokens_cache_creation_input_tokens": 1881255,
+      "tokens_cache_read_input_tokens": 99969709,
+      "tokens_thinking_tokens": 1213442
+    },
+    "tool_calls_by_name": {
+      "Bash": 77,
+      "Write": 25,
+      "Read": 4,
+      "mcp__hitl__hitl_ask": 3,
+      "SendUserFile": 3,
+      "mcp__terminal__read_terminal": 3,
+      "Skill": 1,
+      "ToolSearch": 1,
+      "ListAgents": 1
+    }
+  },
+  "done": {
+    "criteria": {
+      "strict_check_clean": true,
+      "docs_current": true,
+      "nothing_awaiting_ratification": true,
+      "working_tree_clean": true,
+      "tests_green": true
+    },
+    "done": true,
+    "strict_errors": 0,
+    "proposed": 0,
+    "passed": 43,
+    "failed": 0
+  },
+  "provenance": {
+    "repository_commit": "093e21c4502c52c7bf4efce58ceadbdefae59740",
+    "working_tree_clean": true,
+    "sources": [],
+    "tools": {
+      "tl": "tl 3.11.3",
+      "tl-compose": "tl 3.11.3",
+      "tl-ratify": "tl-ratify 0.9.1 (throughline 3.11.3)"
+    },
+    "plugin_version": "1.3.0",
+    "plugin_commit": null,
+    "script": "/home/henry/.claude/plugins/cache/throughline-skills/tl/1.3.0/scripts/assess.py",
+    "python": "3.12.3"
+  }
+}
