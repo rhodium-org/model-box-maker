@@ -165,3 +165,7 @@ python3 -m venv .venv && .venv/bin/pip install -e .[test]
 .venv/bin/python -m pytest -q            # about three minutes; one 200k-triangle timing test
 MODEL_BOX_MAKER_INSTALL_TEST=1 .venv/bin/python -m pytest -q tests/test_lid_and_output.py -k 0032
 ```
+
+## Licence
+
+Apache-2.0. Copyright 2026 Henry J Grech-Cini. Created by Dr Henry J Grech-Cini.

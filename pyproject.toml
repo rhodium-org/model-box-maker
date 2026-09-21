@@ -7,6 +7,9 @@ name = "model-box-maker"
 version = "0.1.0"
 description = "Turn a 3D model file into a printable two-part postal box shaped to that model."
 readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Henry J Grech-Cini", email = "henry.grechcini@gmail.com" }]
 requires-python = ">=3.10"
 # Every dependency ships binary wheels for Linux, macOS and Windows (NFR-0002).
 dependencies = [
