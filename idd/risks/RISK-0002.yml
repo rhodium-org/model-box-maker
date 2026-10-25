@@ -9,9 +9,10 @@ rationale: The box is a thin printed shell and will flex when pressed. The model
 normative: true
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:0eda01fa9b75da84aaf9023656872f9501099253dd437a32b12daa7ee316e082
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:0eda01fa9b75da84aaf9023656872f9501099253dd437a32b12daa7ee316e082
+  content:
     type: risk
     text: A cavity cut to the exact shape of the model touches it everywhere. Any
       flex in the walls or floor then bears on the model, which can be marked, bent
@@ -19,3 +20,4 @@ attrs:
     normative: true
     derived: false
     attrs: {}
+  revision: 5205c0e3774401969f5bc3b60e7ad9b1b5c8ad92

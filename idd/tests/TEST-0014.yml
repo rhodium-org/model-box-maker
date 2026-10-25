@@ -11,9 +11,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:61b9ce865c5919b78aa412bcb1ea1b123be961cf68a2520bee20bf572217fcc4
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:61b9ce865c5919b78aa412bcb1ea1b123be961cf68a2520bee20bf572217fcc4
+  content:
     type: test
     text: Two thousand random points on the input surface, moved to the rest pose,
       each lie at least the clearance less one grid pitch from the nearest point
@@ -21,3 +22,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

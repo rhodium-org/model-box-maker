@@ -10,12 +10,14 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:2315e7042c1263ed76001e2e3bed808b23167ba466903dd28723e0f379eb0856
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:2315e7042c1263ed76001e2e3bed808b23167ba466903dd28723e0f379eb0856
+  content:
     type: test
     text: A run without --walls gives a base byte-identical to --walls solid, and
       --walls hex gives a base of smaller volume.
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

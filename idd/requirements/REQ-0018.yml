@@ -16,9 +16,10 @@ links:
 attrs:
   priority: should
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:2e3245b97fb40dddd49a54e02c56bcae0bbe60b0508383cd4035533d7fb1f0a3
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:2e3245b97fb40dddd49a54e02c56bcae0bbe60b0508383cd4035533d7fb1f0a3
+  content:
     type: requirement
     text: With --preview the tool also writes <stem>-preview.3mf holding three named
       objects, the base, the lid lifted clear above it, and the model in its rest
@@ -27,3 +28,4 @@ attrs:
     derived: false
     attrs:
       priority: should
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

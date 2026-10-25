@@ -20,9 +20,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:a5d5ab5ffbbdc3c4b610b923f45534c5fdcb0c5cef22defefcd9a872c4a40fe2
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:a5d5ab5ffbbdc3c4b610b923f45534c5fdcb0c5cef22defefcd9a872c4a40fe2
+  content:
     type: requirement
     text: The cradle is computed on a square grid at the grid pitch. Each cell takes
       the lowest point of the grown model's surface anywhere over the cell, less
@@ -33,3 +34,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

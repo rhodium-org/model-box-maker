@@ -11,9 +11,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:198a6389135a7d47b58ae953b2585b477969a0a3d21b1c244024d9cbe592bbfb
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:198a6389135a7d47b58ae953b2585b477969a0a3d21b1c244024d9cbe592bbfb
+  content:
     type: test
     text: An empty file, a file with a NaN vertex, and a set of coplanar triangles
       with zero height each make the tool exit 1 with one line naming the fault,
@@ -21,3 +22,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

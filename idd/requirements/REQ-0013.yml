@@ -23,9 +23,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:0dda393b33f03aae624e5ae942fe1eaf76fcc906a40b4d71d5119963e0e54ffa
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:0dda393b33f03aae624e5ae942fe1eaf76fcc906a40b4d71d5119963e0e54ffa
+  content:
     type: requirement
     text: The top of the base wall, over the lip height, is stepped in on the outside
       by the skirt thickness plus the fit gap to form the lip. The lid is a flat
@@ -37,3 +38,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

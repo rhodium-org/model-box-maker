@@ -27,9 +27,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:f7b65d5aef6df09ba49302f82622439dfda37c7c91a61c12d0f5f8f8ba71a751
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:f7b65d5aef6df09ba49302f82622439dfda37c7c91a61c12d0f5f8f8ba71a751
+  content:
     type: requirement
     text: With --orientation auto, the default, the tool evaluates candidate poses
       of the model and keeps the best. The candidates are the model as saved, every
@@ -45,3 +46,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

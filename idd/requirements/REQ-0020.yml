@@ -17,9 +17,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:b2e5b26ee00b80b6380c49655dc19d0a46d68eec3ae18312f85d58c6a4e4cb2f
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:b2e5b26ee00b80b6380c49655dc19d0a46d68eec3ae18312f85d58c6a4e4cb2f
+  content:
     type: requirement
     text: The tool is run as model-box-maker MODEL [options]. --help lists every
       option with its default. On success it exits 0 and prints the files written
@@ -30,3 +31,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

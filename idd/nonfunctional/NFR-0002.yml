@@ -14,9 +14,10 @@ links:
   type: derives_from
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:5c966fb5fdb40c96042ebddea3d4a8c11eb337cbac53a64d341394e960dc446a
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:5c966fb5fdb40c96042ebddea3d4a8c11eb337cbac53a64d341394e960dc446a
+  content:
     type: nfr
     text: The tool is a Python package installable with pipx from the repository.
       Its dependencies ship binary wheels for Linux, macOS and Windows on Python
@@ -24,3 +25,4 @@ attrs:
     normative: true
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

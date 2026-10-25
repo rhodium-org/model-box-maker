@@ -10,9 +10,10 @@ rationale: Every slicer and modelling tool the operator uses defaults to millime
 normative: true
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:b459a5a2eb80783fd07d95dbb8d2cc9ac139355bebc1bd926b7bda87113ca372
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:b459a5a2eb80783fd07d95dbb8d2cc9ac139355bebc1bd926b7bda87113ca372
+  content:
     type: assumption
     text: A model file is read as millimetres unless a scale is given. STL carries
       no unit, so a file authored in inches or metres would otherwise give a box
@@ -20,3 +21,4 @@ attrs:
     normative: true
     derived: false
     attrs: {}
+  revision: 5205c0e3774401969f5bc3b60e7ad9b1b5c8ad92

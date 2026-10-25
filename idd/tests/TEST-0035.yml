@@ -12,9 +12,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:8c03d2fd90154f93755d928f398b0bc8e3b91757c5ea2444de59798ade059c26
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:8c03d2fd90154f93755d928f398b0bc8e3b91757c5ea2444de59798ade059c26
+  content:
     type: test
     text: A post that reaches the floor with an arm reaching out from its top, boxed
       with --walls hex, has holes in the wall beside the post, where the cradle is
@@ -23,3 +24,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: a7c896af94fc1b548b9c8ae5bcf59e0a5f43e14c

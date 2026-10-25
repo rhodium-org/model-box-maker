@@ -11,9 +11,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:58b5b7f039f7a29d0cbe90d8df424050e844b9d1fa3844e45b429cd6a6bd8628
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:58b5b7f039f7a29d0cbe90d8df424050e844b9d1fa3844e45b429cd6a6bd8628
+  content:
     type: test
     text: A good run exits 0 and prints the paths and a one-line pose summary. A
       missing model path exits 2 with usage. A refused model exits 1 with one line.
@@ -21,3 +22,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

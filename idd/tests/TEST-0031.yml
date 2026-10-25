@@ -10,12 +10,14 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:a381bde9ffe750d6ee64eab4182620fc904feb24e79295dfeb3e7ed49f8f1c56
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:a381bde9ffe750d6ee64eab4182620fc904feb24e79295dfeb3e7ed49f8f1c56
+  content:
     type: test
     text: A 200 000-triangle fixture 150 mm across at default options finishes within
       60 seconds on the test machine.
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

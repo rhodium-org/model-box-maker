@@ -13,9 +13,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:671c3fc0c851e049e5bc03e5995cb3f56e8c5d8b023de725a692512e83e4be6b
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:671c3fc0c851e049e5bc03e5995cb3f56e8c5d8b023de725a692512e83e4be6b
+  content:
     type: test
     text: With --walls hex and --walls diamond, the patterned base lies within the
       solid base, the removed material lies within --wall-max plus the cut depth
@@ -25,3 +26,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 63f84174dfa452c00816a01e09aecd0b42110e9d

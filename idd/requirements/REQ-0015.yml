@@ -25,9 +25,10 @@ links:
 attrs:
   priority: could
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:bd8a41e0dbabc8e46411b6daca2169e072f048a708f00047399a7175cdfebf62
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:bd8a41e0dbabc8e46411b6daca2169e072f048a708f00047399a7175cdfebf62
+  content:
     type: requirement
     text: --walls takes solid, hex or diamond, and defaults to solid. With a pattern,
       the outer wall is cut through with that lattice wherever it stands beside open
@@ -41,3 +42,4 @@ attrs:
     derived: false
     attrs:
       priority: could
+  revision: 63f84174dfa452c00816a01e09aecd0b42110e9d

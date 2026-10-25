@@ -9,9 +9,10 @@ rationale: The operator asked for a lip and no hinge. A printed hinge or snap is
 normative: false
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:e27c1420a9de4c9391c3780d11880e2651fc7fb5cdc730e4b81af3a15d04db9e
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:e27c1420a9de4c9391c3780d11880e2651fc7fb5cdc730e4b81af3a15d04db9e
+  content:
     type: non_goal
     text: The lid is held by the fit of its skirt over the lip and by whatever tape
       the sender adds. The tool does not add a hinge, a latch, a snap or a flexing
@@ -19,3 +20,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 5205c0e3774401969f5bc3b60e7ad9b1b5c8ad92

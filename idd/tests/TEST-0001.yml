@@ -10,9 +10,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:c5aba311d8d08a87a9bafd0735e0daabc28b6d3e8e751bb38b2edcf874809525
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:c5aba311d8d08a87a9bafd0735e0daabc28b6d3e8e751bb38b2edcf874809525
+  content:
     type: test
     text: The same model saved as binary STL, ASCII STL, OBJ, 3MF and PLY produces
       bases whose volumes agree within 0.1 percent and whose reports show the same
@@ -20,3 +21,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

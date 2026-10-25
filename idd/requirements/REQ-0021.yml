@@ -23,9 +23,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:e3b084d0842eda1ee6d3a29a933a759ae4bfeedb3c31f4f25bad56215c486fe8
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:e3b084d0842eda1ee6d3a29a933a759ae4bfeedb3c31f4f25bad56215c486fe8
+  content:
     type: requirement
     text: The base stands on its flat underside. The tool takes the footprint of
       the closed box, the convex hull of that footprint, and the distance from the
@@ -39,3 +40,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 63f84174dfa452c00816a01e09aecd0b42110e9d

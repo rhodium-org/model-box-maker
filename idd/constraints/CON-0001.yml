@@ -12,9 +12,10 @@ rationale: The operator's printer is a desktop FDM machine. Support inside the c
 normative: true
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:6bf18c32442c595e1380ebff20c315f55f250a5a45d5e15a85e379e2529cf705
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:6bf18c32442c595e1380ebff20c315f55f250a5a45d5e15a85e379e2529cf705
+  content:
     type: constraint
     text: Every output body prints on an ordinary desktop FDM printer, in the orientation
       it is written, with no support material. Walls, floors and skirts are sized
@@ -22,3 +23,4 @@ attrs:
     normative: true
     derived: false
     attrs: {}
+  revision: 5205c0e3774401969f5bc3b60e7ad9b1b5c8ad92

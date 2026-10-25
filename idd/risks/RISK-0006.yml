@@ -10,9 +10,10 @@ rationale: The operator allowed mesh walls to save material and print time. The 
 normative: true
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:c6cb955fcc1d276d5828fdeb28b3d09104c116ad558dc71903468546a0c22a4c
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:c6cb955fcc1d276d5828fdeb28b3d09104c116ad558dc71903468546a0c22a4c
+  content:
     type: risk
     text: A wall cut into a lattice loses stiffness where the holes are and lets
       a sharp object reach the model. Holes near a corner, the lip or the floor take
@@ -20,3 +21,4 @@ attrs:
     normative: true
     derived: false
     attrs: {}
+  revision: 5205c0e3774401969f5bc3b60e7ad9b1b5c8ad92

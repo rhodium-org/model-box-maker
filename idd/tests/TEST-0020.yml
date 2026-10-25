@@ -12,9 +12,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:37bf891891d5d572229cfeb18897f24d8f6e93ca36604972ed98537db7ac812b
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:37bf891891d5d572229cfeb18897f24d8f6e93ca36604972ed98537db7ac812b
+  content:
     type: test
     text: Every point of the base's outer outline lies at least the wall thickness
       and at most --wall-max from the cavity outline. Where the outline coincides
@@ -23,3 +24,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 63f84174dfa452c00816a01e09aecd0b42110e9d

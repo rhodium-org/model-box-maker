@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install throughline (version floor, always upgraded)
-        run: python -m pip install --upgrade "throughline>=3.11.3"
+        run: python -m pip install --upgrade "throughline>=4.0.0"
       - run: tl --version
       - run: tl -C idd check
 

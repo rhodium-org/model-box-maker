@@ -11,9 +11,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:8b2100d1bfc48c20d1117c27599b31e9bdbbedea7b82efb2868be84812a6c8e2
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:8b2100d1bfc48c20d1117c27599b31e9bdbbedea7b82efb2868be84812a6c8e2
+  content:
     type: test
     text: A bar 80 by 10 by 10 mm saved turned 30 degrees about Z is boxed with its
       long side parallel to a box side, and the outer footprint is 80 and 10 plus
@@ -21,3 +22,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: b393208b2ec46b919ee38283cec2904dd0398805

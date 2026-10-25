@@ -11,9 +11,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:7eac53402ef2b0648f73223041a258864b5b999c4f0dd098e648ed178e527fc3
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:7eac53402ef2b0648f73223041a258864b5b999c4f0dd098e648ed178e527fc3
+  content:
     type: test
     text: The shortest distance between the seated lid and the model in its rest
       pose is at least the top space less 0.05 mm, and every lid vertex below the
@@ -21,3 +22,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

@@ -19,9 +19,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:c7cc9920ca08e8345ce3f87264e14899995fc9bf26691c090126e4ad8acc1406
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:c7cc9920ca08e8345ce3f87264e14899995fc9bf26691c090126e4ad8acc1406
+  content:
     type: requirement
     text: The tool writes <stem>-base and <stem>-lid as STL by default, or 3MF with
       --format 3mf, into the directory given by --out, default the current directory.
@@ -32,3 +33,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

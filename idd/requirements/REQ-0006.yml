@@ -25,9 +25,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:3cb7ec46bfffb4b093f2eed265d6bec03ac3734eb2d00586a794f39f19807636
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:3cb7ec46bfffb4b093f2eed265d6bec03ac3734eb2d00586a794f39f19807636
+  content:
     type: requirement
     text: Beside the geometry the tool writes <stem>-report.json. It records the
       input file and scale, the orientation mode, the rotation applied to the model
@@ -41,3 +42,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

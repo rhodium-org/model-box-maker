@@ -11,9 +11,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:8b7c636454c2f8425c858ce52ac7d4eea75722e4b991175cc48111c4a3097e46
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:8b7c636454c2f8425c858ce52ac7d4eea75722e4b991175cc48111c4a3097e46
+  content:
     type: test
     text: A cube saved as 1 unit across, run with --scale 25.4, gives a cavity at
       least 25.4 mm plus twice the clearance wide, and at most three grid pitches
@@ -21,3 +22,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: b393208b2ec46b919ee38283cec2904dd0398805

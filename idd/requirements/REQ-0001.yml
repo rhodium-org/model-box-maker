@@ -17,9 +17,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:6b485fd462b8807f0ff074650a805e3c65f1c5436cfcce1261648fd21763413b
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:6b485fd462b8807f0ff074650a805e3c65f1c5436cfcce1261648fd21763413b
+  content:
     type: requirement
     text: The tool reads a model from an STL (binary or ASCII), OBJ, 3MF or PLY file.
       The file need not be watertight. A file that cannot be read, holds no triangles,
@@ -29,3 +30,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

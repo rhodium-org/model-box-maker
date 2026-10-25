@@ -10,12 +10,14 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:3bb0036443b67acba15bedd8ce3315afea74414c6ad0bac0465ad0add82caebf
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:3bb0036443b67acba15bedd8ce3315afea74414c6ad0bac0465ad0add82caebf
+  content:
     type: test
     text: A block with a 0.6 mm fin hanging below it is boxed at pitches of 0.25,
       0.5 and 1.0 mm, and the clearance check of the drop path passes at every pitch.
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

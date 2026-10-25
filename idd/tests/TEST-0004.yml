@@ -10,12 +10,14 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:7a723350ba5a57d0d4f6f063cfd300e7a8801ea08b74b497e2f93abcfb328aa6
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:7a723350ba5a57d0d4f6f063cfd300e7a8801ea08b74b497e2f93abcfb328aa6
+  content:
     type: test
     text: A 2 mm cube and a 500 mm cube each produce a units warning on stderr and
       a box. A 60 mm cube produces no warning.
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

@@ -11,9 +11,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:8584ff22d5cfd95845cc1052440afe5fbac7485fbb4d8178baaaa970a8d3721a
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:8584ff22d5cfd95845cc1052440afe5fbac7485fbb4d8178baaaa970a8d3721a
+  content:
     type: test
     text: For each body, every face whose normal points downward lies on Z zero or
       leans no more than 45 degrees from vertical, and in a lattice no bridge is
@@ -21,3 +22,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

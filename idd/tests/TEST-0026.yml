@@ -12,9 +12,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:87154f44bf2eff59a64a071e9886b842cacee135e8eb38c46a97c675cb8dc5a1
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:87154f44bf2eff59a64a071e9886b842cacee135e8eb38c46a97c675cb8dc5a1
+  content:
     type: test
     text: Both files load as watertight manifold bodies with positive volume. The
       base's underside is on Z zero and its cavity is open at its top. The lid's
@@ -23,3 +24,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

@@ -22,9 +22,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:0a5a5f620b0fe22fee83f3ad9b6acc7bb4e3d5fcb50c621c6ca4e559c190d268
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:0a5a5f620b0fe22fee83f3ad9b6acc7bb4e3d5fcb50c621c6ca4e559c190d268
+  content:
     type: requirement
     text: Each of these is a command-line option in millimetres with its default
       shown in --help. Clearance around the model 1.0. Wall thickness 2.4. Greatest
@@ -39,3 +40,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 63f84174dfa452c00816a01e09aecd0b42110e9d

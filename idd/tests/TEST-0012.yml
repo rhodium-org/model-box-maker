@@ -11,9 +11,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:f7fc63a0eba21d4365ae4c9edcffc10b960ada2f5a966d1412819e450cfa9c6e
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:f7fc63a0eba21d4365ae4c9edcffc10b960ada2f5a966d1412819e450cfa9c6e
+  content:
     type: test
     text: The report parses as JSON with every field named in REQ-0006. Applying
       its rotation and translation to the input places every vertex inside the cavity
@@ -21,3 +22,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

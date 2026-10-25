@@ -13,9 +13,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:e80dfa81271ebddb43024eccebe425a3a0eb44b339362270f37661fe0075708e
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:e80dfa81271ebddb43024eccebe425a3a0eb44b339362270f37661fe0075708e
+  content:
     type: test
     text: A cylinder kept standing on its end is boxed. The footprint of the closed
       box is at least 15 percent smaller than the rectangle's, every point of the
@@ -25,3 +26,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 63f84174dfa452c00816a01e09aecd0b42110e9d

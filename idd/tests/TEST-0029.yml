@@ -10,12 +10,14 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:f1d7db0ee73319be6f813763f527077138aafcd7b99aa3b29b6c0e59230cc31d
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:f1d7db0ee73319be6f813763f527077138aafcd7b99aa3b29b6c0e59230cc31d
+  content:
     type: test
     text: Two runs on the same model with the same options produce identical hashes
       for every file written.
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

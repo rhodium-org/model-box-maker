@@ -18,9 +18,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:fb59ef0cee4012f3e80f2dd70412d0fe5059cc8cf5c66e59bb826a126550d624
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:fb59ef0cee4012f3e80f2dd70412d0fe5059cc8cf5c66e59bb826a126550d624
+  content:
     type: requirement
     text: The rim stands at least the top space above the highest point of the model
       in its rest pose. Below the rim plane the lid has only its skirt, and the skirt
@@ -30,3 +31,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

@@ -12,9 +12,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:6cd03cd8fd6b1f49f98b8e58556a30fe0e8170293e8f8c9137a73eb1a4f4c5f4
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:6cd03cd8fd6b1f49f98b8e58556a30fe0e8170293e8f8c9137a73eb1a4f4c5f4
+  content:
     type: test
     text: A triangular prism kept standing on its end, whose cut-back footprint would
       tip below 20 degrees while the full rectangle would not, is boxed with the
@@ -23,3 +24,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 22dc37e8e7dd913144002fd151972c2422428dff

@@ -16,9 +16,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:804fec9aca08efa27f84ec7b1c891e4a228664046169c11aa833949be383d022
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:804fec9aca08efa27f84ec7b1c891e4a228664046169c11aa833949be383d022
+  content:
     type: requirement
     text: The inner face of the wall is the cavity outline. At the lip, no point
       of the outer face is nearer the outline than the wall thickness. Below the
@@ -28,3 +29,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 63f84174dfa452c00816a01e09aecd0b42110e9d

@@ -11,9 +11,10 @@ rationale: Posting a printed model in a found box means padding it by hand each 
 normative: false
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:a9422586bdb1f93630fd2efc141839d699479ae89d95d35dc30d113b69b847d9
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:a9422586bdb1f93630fd2efc141839d699479ae89d95d35dc30d113b69b847d9
+  content:
     type: intent
     text: The tool takes a 3D model file and writes a printable two-part box for
       it. The model drops into the base from above, a lid closes over a lip, and
@@ -22,3 +23,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 5205c0e3774401969f5bc3b60e7ad9b1b5c8ad92

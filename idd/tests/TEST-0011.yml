@@ -11,9 +11,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:b50c10fdd58215dd9730e0c4409ad5672aa81a0b4875c9944cd8f75ae2f71689
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:b50c10fdd58215dd9730e0c4409ad5672aa81a0b4875c9944cd8f75ae2f71689
+  content:
     type: test
     text: --orientation keep reports the identity rotation and a cradle matching
       the file's underside. --orientation 90,0,0 reports a rotation equal to that
@@ -21,3 +22,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

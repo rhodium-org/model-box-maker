@@ -11,9 +11,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:019835bb4bfd48dedd4abcabea0849a7062021d32ac57b44a12374db55e0a499
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:019835bb4bfd48dedd4abcabea0849a7062021d32ac57b44a12374db55e0a499
+  content:
     type: test
     text: The seated lid's plate underside is on the rim plane within 0.01 mm, its
       skirt inner face is the fit gap from the lip, its outer face is flush with
@@ -22,3 +23,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

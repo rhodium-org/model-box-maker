@@ -19,9 +19,10 @@ links:
 attrs:
   priority: should
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:64f32157692ab7c235fc22564ede13a14e600ce6fbc58617856018314c2abdc3
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:64f32157692ab7c235fc22564ede13a14e600ce6fbc58617856018314c2abdc3
+  content:
     type: requirement
     text: --max-outer A,B,C gives the largest closed box allowed, in millimetres,
       in any order. A candidate pose whose box exceeds the limit in every pairing
@@ -31,3 +32,4 @@ attrs:
     derived: false
     attrs:
       priority: should
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

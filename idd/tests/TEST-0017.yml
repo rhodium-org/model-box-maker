@@ -11,9 +11,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:856b27161f4d85b88db997c4e17dcfaaf92269270d0bb642c0403a24cc245c43
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:856b27161f4d85b88db997c4e17dcfaaf92269270d0bb642c0403a24cc245c43
+  content:
     type: test
     text: The cavity computed at 1.0 mm pitch contains the cavity computed at 0.25
       mm pitch. The coarse outline contains the fine outline, and over every cell
@@ -22,3 +23,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: b393208b2ec46b919ee38283cec2904dd0398805

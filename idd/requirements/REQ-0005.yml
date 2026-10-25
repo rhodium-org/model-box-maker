@@ -18,9 +18,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:7e16b885ae1ace19b7d18174280339a011d2a92f782c0752a2657926ce5c92ec
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:7e16b885ae1ace19b7d18174280339a011d2a92f782c0752a2657926ce5c92ec
+  content:
     type: requirement
     text: --orientation keep uses the model as saved, with the file's Z axis up.
       --orientation RX,RY,RZ rotates the model by those angles in degrees about the
@@ -31,3 +32,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

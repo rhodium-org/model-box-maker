@@ -15,9 +15,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:dbff87159fd95faccbeca91e1674950100de57b119f93225dc842399c94b1e79
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:dbff87159fd95faccbeca91e1674950100de57b119f93225dc842399c94b1e79
+  content:
     type: requirement
     text: The base is solid from its underside up to the cradle surface at every
       point of the footprint. The lowest point of the cradle sits exactly the floor
@@ -26,3 +27,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

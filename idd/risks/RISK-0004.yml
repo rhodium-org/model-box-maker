@@ -11,9 +11,10 @@ rationale: The operator named orientation as the hardest part. Taking the file a
 normative: true
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:33a2e9eb2b1f2750ed13ffd9b99f91bcd6176de002833ba5139fabef8f69dc94
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:33a2e9eb2b1f2750ed13ffd9b99f91bcd6176de002833ba5139fabef8f69dc94
+  content:
     type: risk
     text: The same model dropped in a different orientation gives a different box.
       A bad choice leaves large empty space under overhanging parts, a tall thin
@@ -21,3 +22,4 @@ attrs:
     normative: true
     derived: false
     attrs: {}
+  revision: 5205c0e3774401969f5bc3b60e7ad9b1b5c8ad92

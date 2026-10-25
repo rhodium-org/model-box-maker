@@ -16,9 +16,10 @@ links:
 attrs:
   priority: must
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:96c70e6f614a13c775294a2862f25413b7e94f3fd763d0897f7e76a0d47e9264
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:96c70e6f614a13c775294a2862f25413b7e94f3fd763d0897f7e76a0d47e9264
+  content:
     type: requirement
     text: In the orientation written, no downward-facing face of either body leans
       more than 45 degrees from vertical unless it lies on the bed. In a lattice
@@ -28,3 +29,4 @@ attrs:
     derived: false
     attrs:
       priority: must
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882

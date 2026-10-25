@@ -12,9 +12,10 @@ rationale: Each excluded feature is a different tool and none of them makes the 
 normative: false
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:9464b4da1c818d7a17408054249d2fa55b59a670a93f2fd969846302cb4b25ab
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:9464b4da1c818d7a17408054249d2fa55b59a670a93f2fd969846302cb4b25ab
+  content:
     type: non_goal
     text: One model per box. The tool does not nest several models, does not shape
       the top or the underside of the box to the model, does not generate foam or
@@ -22,3 +23,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 803a012948ef0bbd705a84cb2ed2acbf08c93148

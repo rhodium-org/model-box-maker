@@ -11,9 +11,10 @@ links:
   type: verifies
 attrs:
   origin: ai
-  ratified_by: Henry Grech-Cini
-  ratified_fingerprint: sha256:33166fc05db48300ccc9a24955da183cc85de0cd2df719b15defa3b8cdcc1d2b
-  ratified_content:
+ratifications:
+- by: Henry Grech-Cini
+  fingerprint: sha256:33166fc05db48300ccc9a24955da183cc85de0cd2df719b15defa3b8cdcc1d2b
+  content:
     type: test
     text: The preview 3MF has three objects named base, lid and model, the model's
       transform equals the report's rotation and translation, and the lid sits wholly
@@ -21,3 +22,4 @@ attrs:
     normative: false
     derived: false
     attrs: {}
+  revision: 458a01462c6e21c1c68cdef0d1459f30c9960882
