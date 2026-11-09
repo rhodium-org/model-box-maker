@@ -50,8 +50,11 @@ types = ["refines", "verifies", "satisfies", "implements", "relates",
 [status]
 # draft = actively moving toward approval; deferred = acknowledged and grounded
 # but deliberately parked (a backlog wish-list item, not on the active front).
-values = ["proposed", "draft", "deferred", "approved", "ratified", "implemented",
-          "verified", "suspect", "rejected", "deleted"]
+# Retired by `tl migrate` (SR-0313): draft, approved stood between proposal and
+# signature. Every item is born proposed and counts only once a person signs it
+# (UR-0046).
+values = ["proposed", "deferred", "ratified", "implemented", "verified",
+          "suspect", "rejected", "deleted"]
 
 # Semantic status roles (SR-0131): which declared status plays each role the
 # tool's operations act on — `tl new` births at 'initial', `tl ratify` writes
@@ -60,7 +63,7 @@ values = ["proposed", "draft", "deferred", "approved", "ratified", "implemented"
 # through these roles, never a literal, so a project renames a status freely by
 # editing here. Delete this table only if you drive every status move by hand.
 [status.roles]
-initial = "draft"
+initial = "proposed"
 proposed = "proposed"
 ratified = "ratified"
 invalidated = "rejected"
@@ -77,15 +80,14 @@ tombstone = "deleted"
 # whose grounding is withdrawn can be flagged wherever it currently sits — the
 # statuses below 'approved' hold the items whose grounding is least settled.
 [transitions]
-proposed    = ["draft", "approved", "ratified", "deferred", "suspect", "rejected", "deleted"]
-draft       = ["proposed", "approved", "deferred", "suspect", "rejected", "deleted"]
-deferred    = ["proposed", "draft", "approved", "suspect", "rejected", "deleted"]
-approved    = ["ratified", "implemented", "deferred", "suspect", "rejected", "deleted"]
+proposed = ["ratified", "deferred", "suspect", "rejected", "deleted"]
+deferred = ["proposed", "suspect", "rejected", "deleted"]
 ratified    = ["implemented", "suspect", "rejected", "deleted"]
 implemented = ["verified", "suspect", "rejected", "deleted"]
 verified    = ["implemented", "suspect", "deleted"]
-suspect     = ["approved", "ratified", "implemented", "verified", "rejected", "deleted"]
-rejected    = ["draft", "deleted"]
+suspect = ["proposed", "ratified", "implemented", "verified", "rejected",
+           "deleted"]
+rejected = ["proposed", "deleted"]
 
 # Coverage: every live requirement should be verified by a test.
 [[rules.coverage]]
